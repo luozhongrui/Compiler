@@ -1,0 +1,2904 @@
+Terminals unused in grammar
+
+   DEF
+
+
+State 4 conflicts: 3 shift/reduce
+State 9 conflicts: 2 shift/reduce
+State 10 conflicts: 3 shift/reduce
+State 12 conflicts: 1 shift/reduce
+State 16 conflicts: 1 shift/reduce
+State 25 conflicts: 8 shift/reduce
+State 51 conflicts: 1 shift/reduce
+State 80 conflicts: 1 shift/reduce
+State 81 conflicts: 13 reduce/reduce
+State 82 conflicts: 13 reduce/reduce
+State 86 conflicts: 13 reduce/reduce
+State 89 conflicts: 13 reduce/reduce
+State 90 conflicts: 1 shift/reduce, 13 reduce/reduce
+State 127 conflicts: 1 shift/reduce
+State 131 conflicts: 1 shift/reduce
+
+
+Grammar
+
+    0 $accept: ProgramName $end
+
+    1 ProgramName: ProgramName itemProgram
+    2            | itemProgram
+
+    3 itemProgram: ID ';' CompStat end
+    4            | ID ';' VarConFunDecDef CompStat end
+
+    5 VarConFunDecDef: VarConFunDecDef itemVarConFunDecDef
+    6                | itemVarConFunDecDef
+
+    7 itemVarConFunDecDef: VarConstant
+    8                    | FuncDecDef
+
+    9 VarConstant: VarConstant itemVarConstant
+   10            | itemVarConstant
+   11            | %empty
+
+   12 itemVarConstant: VarDecl
+   13                | Constant
+
+   14 VarDecl: VAR IdList ':' ScalType ';'
+   15        | VAR IdList ':' ArrayType ';'
+
+   16 Constant: VAR IdList ':' LiterConstant ';'
+
+   17 ScalType: INTEGER
+   18         | BOOLEAN
+   19         | REAL
+   20         | STRING
+
+   21 ArrayType: ArrayDim ScalType
+
+   22 ArrayDim: ArrayDim itemArrayDim
+   23         | itemArrayDim
+
+   24 itemArrayDim: ARRAY NUM OF
+
+   25 IdList: IdList ',' ID
+   26       | ID
+
+   27 LiterConstant: NUM
+   28              | '-' NUM
+   29              | CHAR
+   30              | TRUE
+   31              | FALSE
+
+   32 FuncDecDef: FuncDecDef itemFuncDecDef
+   33           | itemFuncDecDef
+
+   34 itemFuncDecDef: FuncDec
+   35               | FuncDef
+
+   36 FuncDec: ID '(' ')' ':' ScalType ';'
+   37        | ID '(' argument ')' ':' ScalType ';'
+   38        | ID '(' ')' ';'
+   39        | ID '(' argument ')' ';'
+
+   40 argument: argument ';' IdList ':' ScalType
+   41         | IdList ':' ScalType
+
+   42 FuncDef: ID '(' ')' ':' ScalType CompStat end
+   43        | ID '(' argument ')' ':' ScalType CompStat end
+   44        | ID '(' ')' CompStat end
+   45        | ID '(' argument ')' CompStat end
+
+   46 Statements: Statements itemStatement
+   47           | itemStatement
+   48           | %empty
+
+   49 itemStatement: CompStat
+   50              | SimpleStat
+   51              | ConditionStat
+   52              | WhileStat
+   53              | ForStat
+   54              | ReturnStat
+   55              | FunCall
+
+   56 CompStat: begin end
+   57         | begin VarConstant Statements end
+
+   58 SimpleStat: VarRefer ASSIGN Expr ';'
+   59           | PRINT Expr ';'
+   60           | READ VarRefer ';'
+
+   61 ConditionStat: IF Expr THEN CompStat ELSE CompStat end IF
+   62              | IF Expr THEN CompStat end IF
+
+   63 WhileStat: WHILE Expr DO CompStat end DO
+
+   64 ForStat: FOR ID ASSIGN Expr TO Expr DO CompStat end DO
+
+   65 ReturnStat: RETURN Expr ';'
+
+   66 FunCall: FunCall itemFunCall
+   67        | itemFunCall
+
+   68 itemFunCall: ID '(' ')' ';'
+   69            | ID '(' ExprList ')' ';'
+
+   70 VarRefer: ID
+   71         | ID Wrapped
+
+   72 Wrapped: Wrapped '[' Expr ']'
+   73        | '[' Expr ']'
+
+   74 Expr: Expr itemExpr
+   75     | itemExpr
+
+   76 itemExpr: CHAR
+   77         | NUM
+   78         | VarRefer
+   79         | FunCallNotSem
+   80         | AritExpr
+   81         | LogicExpr
+
+   82 ExprList: ExprList ',' Expr
+   83         | Expr
+
+   84 FunCallNotSem: ID '(' ')'
+   85              | ID '(' ExprList ')'
+
+   86 AritExpr: '-' AritExpr
+   87         | '(' AritExpr ')'
+   88         | AritExpr '+' AritExpr
+   89         | AritExpr '-' AritExpr
+   90         | AritExpr '*' AritExpr
+   91         | AritExpr '/' AritExpr
+   92         | AritExpr MOD AritExpr
+   93         | NUM
+   94         | CHAR
+   95         | VarRefer
+   96         | FunCallNotSem
+
+   97 LogicExpr: LogicExpr '>' LogicExpr
+   98          | LogicExpr '<' LogicExpr
+   99          | LogicExpr '=' LogicExpr
+  100          | LogicExpr GreaterEqual LogicExpr
+  101          | LogicExpr LessEqual LogicExpr
+  102          | LogicExpr NotEqual LogicExpr
+  103          | LogicExpr AND LogicExpr
+  104          | LogicExpr OR LogicExpr
+  105          | NOT LogicExpr
+  106          | '(' LogicExpr ')'
+  107          | AritExpr
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 36 37 38 39 42 43 44 45 68 69 84 85 87 106
+')' (41) 36 37 38 39 42 43 44 45 68 69 84 85 87 106
+'*' (42) 90
+'+' (43) 88
+',' (44) 25 82
+'-' (45) 28 86 89
+'/' (47) 91
+':' (58) 14 15 16 36 37 40 41 42 43
+';' (59) 3 4 14 15 16 36 37 38 39 40 58 59 60 65 68 69
+'<' (60) 98
+'=' (61) 99
+'>' (62) 97
+'[' (91) 72 73
+']' (93) 72 73
+error (256)
+ID (258) 3 4 25 26 36 37 38 39 42 43 44 45 64 68 69 70 71 84 85
+CHAR (259) 29 76 94
+NUM (260) 24 27 28 77 93
+VAR (261) 14 15 16
+ARRAY (262) 24
+OF (263) 24
+BOOLEAN (264) 18
+INTEGER (265) 17
+REAL (266) 19
+STRING (267) 20
+TRUE (268) 30
+FALSE (269) 31
+DEF (270)
+RETURN (271) 65
+begin (272) 56 57
+end (273) 3 4 42 43 44 45 56 57 61 62 63 64
+WHILE (274) 63
+DO (275) 63 64
+IF (276) 61 62
+THEN (277) 61 62
+ELSE (278) 61
+FOR (279) 64
+TO (280) 64
+PRINT (281) 59
+READ (282) 60
+ASSIGN (283) 58 64
+AND (284) 103
+OR (285) 104
+GreaterEqual (286) 100
+LessEqual (287) 101
+NotEqual (288) 102
+MOD (289) 92
+NOT (290) 105
+
+
+Nonterminals, with rules where they appear
+
+$accept (50)
+    on left: 0
+ProgramName (51)
+    on left: 1 2, on right: 0 1
+itemProgram (52)
+    on left: 3 4, on right: 1 2
+VarConFunDecDef (53)
+    on left: 5 6, on right: 4 5
+itemVarConFunDecDef (54)
+    on left: 7 8, on right: 5 6
+VarConstant (55)
+    on left: 9 10 11, on right: 7 9 57
+itemVarConstant (56)
+    on left: 12 13, on right: 9 10
+VarDecl (57)
+    on left: 14 15, on right: 12
+Constant (58)
+    on left: 16, on right: 13
+ScalType (59)
+    on left: 17 18 19 20, on right: 14 21 36 37 40 41 42 43
+ArrayType (60)
+    on left: 21, on right: 15
+ArrayDim (61)
+    on left: 22 23, on right: 21 22
+itemArrayDim (62)
+    on left: 24, on right: 22 23
+IdList (63)
+    on left: 25 26, on right: 14 15 16 25 40 41
+LiterConstant (64)
+    on left: 27 28 29 30 31, on right: 16
+FuncDecDef (65)
+    on left: 32 33, on right: 8 32
+itemFuncDecDef (66)
+    on left: 34 35, on right: 32 33
+FuncDec (67)
+    on left: 36 37 38 39, on right: 34
+argument (68)
+    on left: 40 41, on right: 37 39 40 43 45
+FuncDef (69)
+    on left: 42 43 44 45, on right: 35
+Statements (70)
+    on left: 46 47 48, on right: 46 57
+itemStatement (71)
+    on left: 49 50 51 52 53 54 55, on right: 46 47
+CompStat (72)
+    on left: 56 57, on right: 3 4 42 43 44 45 49 61 62 63 64
+SimpleStat (73)
+    on left: 58 59 60, on right: 50
+ConditionStat (74)
+    on left: 61 62, on right: 51
+WhileStat (75)
+    on left: 63, on right: 52
+ForStat (76)
+    on left: 64, on right: 53
+ReturnStat (77)
+    on left: 65, on right: 54
+FunCall (78)
+    on left: 66 67, on right: 55 66
+itemFunCall (79)
+    on left: 68 69, on right: 66 67
+VarRefer (80)
+    on left: 70 71, on right: 58 60 78 95
+Wrapped (81)
+    on left: 72 73, on right: 71 72
+Expr (82)
+    on left: 74 75, on right: 58 59 61 62 63 64 65 72 73 74 82 83
+itemExpr (83)
+    on left: 76 77 78 79 80 81, on right: 74 75
+ExprList (84)
+    on left: 82 83, on right: 69 82 85
+FunCallNotSem (85)
+    on left: 84 85, on right: 79 96
+AritExpr (86)
+    on left: 86 87 88 89 90 91 92 93 94 95 96, on right: 80 86 87 88
+    89 90 91 92 107
+LogicExpr (87)
+    on left: 97 98 99 100 101 102 103 104 105 106 107, on right: 81
+    97 98 99 100 101 102 103 104 105 106
+
+
+State 0
+
+    0 $accept: . ProgramName $end
+
+    ID  shift, and go to state 1
+
+    ProgramName  go to state 2
+    itemProgram  go to state 3
+
+
+State 1
+
+    3 itemProgram: ID . ';' CompStat end
+    4            | ID . ';' VarConFunDecDef CompStat end
+
+    ';'  shift, and go to state 4
+
+
+State 2
+
+    0 $accept: ProgramName . $end
+    1 ProgramName: ProgramName . itemProgram
+
+    $end  shift, and go to state 5
+    ID    shift, and go to state 1
+
+    itemProgram  go to state 6
+
+
+State 3
+
+    2 ProgramName: itemProgram .
+
+    $default  reduce using rule 2 (ProgramName)
+
+
+State 4
+
+    3 itemProgram: ID ';' . CompStat end
+    4            | ID ';' . VarConFunDecDef CompStat end
+
+    ID     shift, and go to state 7
+    VAR    shift, and go to state 8
+    begin  shift, and go to state 9
+
+    ID     [reduce using rule 11 (VarConstant)]
+    VAR    [reduce using rule 11 (VarConstant)]
+    begin  [reduce using rule 11 (VarConstant)]
+
+    VarConFunDecDef      go to state 10
+    itemVarConFunDecDef  go to state 11
+    VarConstant          go to state 12
+    itemVarConstant      go to state 13
+    VarDecl              go to state 14
+    Constant             go to state 15
+    FuncDecDef           go to state 16
+    itemFuncDecDef       go to state 17
+    FuncDec              go to state 18
+    FuncDef              go to state 19
+    CompStat             go to state 20
+
+
+State 5
+
+    0 $accept: ProgramName $end .
+
+    $default  accept
+
+
+State 6
+
+    1 ProgramName: ProgramName itemProgram .
+
+    $default  reduce using rule 1 (ProgramName)
+
+
+State 7
+
+   36 FuncDec: ID . '(' ')' ':' ScalType ';'
+   37        | ID . '(' argument ')' ':' ScalType ';'
+   38        | ID . '(' ')' ';'
+   39        | ID . '(' argument ')' ';'
+   42 FuncDef: ID . '(' ')' ':' ScalType CompStat end
+   43        | ID . '(' argument ')' ':' ScalType CompStat end
+   44        | ID . '(' ')' CompStat end
+   45        | ID . '(' argument ')' CompStat end
+
+    '('  shift, and go to state 21
+
+
+State 8
+
+   14 VarDecl: VAR . IdList ':' ScalType ';'
+   15        | VAR . IdList ':' ArrayType ';'
+   16 Constant: VAR . IdList ':' LiterConstant ';'
+
+    ID  shift, and go to state 22
+
+    IdList  go to state 23
+
+
+State 9
+
+   56 CompStat: begin . end
+   57         | begin . VarConstant Statements end
+
+    VAR  shift, and go to state 8
+    end  shift, and go to state 24
+
+    VAR       [reduce using rule 11 (VarConstant)]
+    end       [reduce using rule 11 (VarConstant)]
+    $default  reduce using rule 11 (VarConstant)
+
+    VarConstant      go to state 25
+    itemVarConstant  go to state 13
+    VarDecl          go to state 14
+    Constant         go to state 15
+
+
+State 10
+
+    4 itemProgram: ID ';' VarConFunDecDef . CompStat end
+    5 VarConFunDecDef: VarConFunDecDef . itemVarConFunDecDef
+
+    ID     shift, and go to state 7
+    VAR    shift, and go to state 8
+    begin  shift, and go to state 9
+
+    ID     [reduce using rule 11 (VarConstant)]
+    VAR    [reduce using rule 11 (VarConstant)]
+    begin  [reduce using rule 11 (VarConstant)]
+
+    itemVarConFunDecDef  go to state 26
+    VarConstant          go to state 12
+    itemVarConstant      go to state 13
+    VarDecl              go to state 14
+    Constant             go to state 15
+    FuncDecDef           go to state 16
+    itemFuncDecDef       go to state 17
+    FuncDec              go to state 18
+    FuncDef              go to state 19
+    CompStat             go to state 27
+
+
+State 11
+
+    6 VarConFunDecDef: itemVarConFunDecDef .
+
+    $default  reduce using rule 6 (VarConFunDecDef)
+
+
+State 12
+
+    7 itemVarConFunDecDef: VarConstant .
+    9 VarConstant: VarConstant . itemVarConstant
+
+    VAR  shift, and go to state 8
+
+    VAR       [reduce using rule 7 (itemVarConFunDecDef)]
+    $default  reduce using rule 7 (itemVarConFunDecDef)
+
+    itemVarConstant  go to state 28
+    VarDecl          go to state 14
+    Constant         go to state 15
+
+
+State 13
+
+   10 VarConstant: itemVarConstant .
+
+    $default  reduce using rule 10 (VarConstant)
+
+
+State 14
+
+   12 itemVarConstant: VarDecl .
+
+    $default  reduce using rule 12 (itemVarConstant)
+
+
+State 15
+
+   13 itemVarConstant: Constant .
+
+    $default  reduce using rule 13 (itemVarConstant)
+
+
+State 16
+
+    8 itemVarConFunDecDef: FuncDecDef .
+   32 FuncDecDef: FuncDecDef . itemFuncDecDef
+
+    ID  shift, and go to state 7
+
+    ID        [reduce using rule 8 (itemVarConFunDecDef)]
+    $default  reduce using rule 8 (itemVarConFunDecDef)
+
+    itemFuncDecDef  go to state 29
+    FuncDec         go to state 18
+    FuncDef         go to state 19
+
+
+State 17
+
+   33 FuncDecDef: itemFuncDecDef .
+
+    $default  reduce using rule 33 (FuncDecDef)
+
+
+State 18
+
+   34 itemFuncDecDef: FuncDec .
+
+    $default  reduce using rule 34 (itemFuncDecDef)
+
+
+State 19
+
+   35 itemFuncDecDef: FuncDef .
+
+    $default  reduce using rule 35 (itemFuncDecDef)
+
+
+State 20
+
+    3 itemProgram: ID ';' CompStat . end
+
+    end  shift, and go to state 30
+
+
+State 21
+
+   36 FuncDec: ID '(' . ')' ':' ScalType ';'
+   37        | ID '(' . argument ')' ':' ScalType ';'
+   38        | ID '(' . ')' ';'
+   39        | ID '(' . argument ')' ';'
+   42 FuncDef: ID '(' . ')' ':' ScalType CompStat end
+   43        | ID '(' . argument ')' ':' ScalType CompStat end
+   44        | ID '(' . ')' CompStat end
+   45        | ID '(' . argument ')' CompStat end
+
+    ID   shift, and go to state 22
+    ')'  shift, and go to state 31
+
+    IdList    go to state 32
+    argument  go to state 33
+
+
+State 22
+
+   26 IdList: ID .
+
+    $default  reduce using rule 26 (IdList)
+
+
+State 23
+
+   14 VarDecl: VAR IdList . ':' ScalType ';'
+   15        | VAR IdList . ':' ArrayType ';'
+   16 Constant: VAR IdList . ':' LiterConstant ';'
+   25 IdList: IdList . ',' ID
+
+    ','  shift, and go to state 34
+    ':'  shift, and go to state 35
+
+
+State 24
+
+   56 CompStat: begin end .
+
+    $default  reduce using rule 56 (CompStat)
+
+
+State 25
+
+    9 VarConstant: VarConstant . itemVarConstant
+   57 CompStat: begin VarConstant . Statements end
+
+    ID      shift, and go to state 36
+    VAR     shift, and go to state 8
+    RETURN  shift, and go to state 37
+    begin   shift, and go to state 9
+    WHILE   shift, and go to state 38
+    IF      shift, and go to state 39
+    FOR     shift, and go to state 40
+    PRINT   shift, and go to state 41
+    READ    shift, and go to state 42
+
+    ID        [reduce using rule 48 (Statements)]
+    RETURN    [reduce using rule 48 (Statements)]
+    begin     [reduce using rule 48 (Statements)]
+    WHILE     [reduce using rule 48 (Statements)]
+    IF        [reduce using rule 48 (Statements)]
+    FOR       [reduce using rule 48 (Statements)]
+    PRINT     [reduce using rule 48 (Statements)]
+    READ      [reduce using rule 48 (Statements)]
+    $default  reduce using rule 48 (Statements)
+
+    itemVarConstant  go to state 28
+    VarDecl          go to state 14
+    Constant         go to state 15
+    Statements       go to state 43
+    itemStatement    go to state 44
+    CompStat         go to state 45
+    SimpleStat       go to state 46
+    ConditionStat    go to state 47
+    WhileStat        go to state 48
+    ForStat          go to state 49
+    ReturnStat       go to state 50
+    FunCall          go to state 51
+    itemFunCall      go to state 52
+    VarRefer         go to state 53
+
+
+State 26
+
+    5 VarConFunDecDef: VarConFunDecDef itemVarConFunDecDef .
+
+    $default  reduce using rule 5 (VarConFunDecDef)
+
+
+State 27
+
+    4 itemProgram: ID ';' VarConFunDecDef CompStat . end
+
+    end  shift, and go to state 54
+
+
+State 28
+
+    9 VarConstant: VarConstant itemVarConstant .
+
+    $default  reduce using rule 9 (VarConstant)
+
+
+State 29
+
+   32 FuncDecDef: FuncDecDef itemFuncDecDef .
+
+    $default  reduce using rule 32 (FuncDecDef)
+
+
+State 30
+
+    3 itemProgram: ID ';' CompStat end .
+
+    $default  reduce using rule 3 (itemProgram)
+
+
+State 31
+
+   36 FuncDec: ID '(' ')' . ':' ScalType ';'
+   38        | ID '(' ')' . ';'
+   42 FuncDef: ID '(' ')' . ':' ScalType CompStat end
+   44        | ID '(' ')' . CompStat end
+
+    begin  shift, and go to state 9
+    ';'    shift, and go to state 55
+    ':'    shift, and go to state 56
+
+    CompStat  go to state 57
+
+
+State 32
+
+   25 IdList: IdList . ',' ID
+   41 argument: IdList . ':' ScalType
+
+    ','  shift, and go to state 34
+    ':'  shift, and go to state 58
+
+
+State 33
+
+   37 FuncDec: ID '(' argument . ')' ':' ScalType ';'
+   39        | ID '(' argument . ')' ';'
+   40 argument: argument . ';' IdList ':' ScalType
+   43 FuncDef: ID '(' argument . ')' ':' ScalType CompStat end
+   45        | ID '(' argument . ')' CompStat end
+
+    ';'  shift, and go to state 59
+    ')'  shift, and go to state 60
+
+
+State 34
+
+   25 IdList: IdList ',' . ID
+
+    ID  shift, and go to state 61
+
+
+State 35
+
+   14 VarDecl: VAR IdList ':' . ScalType ';'
+   15        | VAR IdList ':' . ArrayType ';'
+   16 Constant: VAR IdList ':' . LiterConstant ';'
+
+    CHAR     shift, and go to state 62
+    NUM      shift, and go to state 63
+    ARRAY    shift, and go to state 64
+    BOOLEAN  shift, and go to state 65
+    INTEGER  shift, and go to state 66
+    REAL     shift, and go to state 67
+    STRING   shift, and go to state 68
+    TRUE     shift, and go to state 69
+    FALSE    shift, and go to state 70
+    '-'      shift, and go to state 71
+
+    ScalType       go to state 72
+    ArrayType      go to state 73
+    ArrayDim       go to state 74
+    itemArrayDim   go to state 75
+    LiterConstant  go to state 76
+
+
+State 36
+
+   68 itemFunCall: ID . '(' ')' ';'
+   69            | ID . '(' ExprList ')' ';'
+   70 VarRefer: ID .
+   71         | ID . Wrapped
+
+    '('  shift, and go to state 77
+    '['  shift, and go to state 78
+
+    $default  reduce using rule 70 (VarRefer)
+
+    Wrapped  go to state 79
+
+
+State 37
+
+   65 ReturnStat: RETURN . Expr ';'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 87
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 38
+
+   63 WhileStat: WHILE . Expr DO CompStat end DO
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 92
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 39
+
+   61 ConditionStat: IF . Expr THEN CompStat ELSE CompStat end IF
+   62              | IF . Expr THEN CompStat end IF
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 93
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 40
+
+   64 ForStat: FOR . ID ASSIGN Expr TO Expr DO CompStat end DO
+
+    ID  shift, and go to state 94
+
+
+State 41
+
+   59 SimpleStat: PRINT . Expr ';'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 95
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 42
+
+   60 SimpleStat: READ . VarRefer ';'
+
+    ID  shift, and go to state 96
+
+    VarRefer  go to state 97
+
+
+State 43
+
+   46 Statements: Statements . itemStatement
+   57 CompStat: begin VarConstant Statements . end
+
+    ID      shift, and go to state 36
+    RETURN  shift, and go to state 37
+    begin   shift, and go to state 9
+    end     shift, and go to state 98
+    WHILE   shift, and go to state 38
+    IF      shift, and go to state 39
+    FOR     shift, and go to state 40
+    PRINT   shift, and go to state 41
+    READ    shift, and go to state 42
+
+    itemStatement  go to state 99
+    CompStat       go to state 45
+    SimpleStat     go to state 46
+    ConditionStat  go to state 47
+    WhileStat      go to state 48
+    ForStat        go to state 49
+    ReturnStat     go to state 50
+    FunCall        go to state 51
+    itemFunCall    go to state 52
+    VarRefer       go to state 53
+
+
+State 44
+
+   47 Statements: itemStatement .
+
+    $default  reduce using rule 47 (Statements)
+
+
+State 45
+
+   49 itemStatement: CompStat .
+
+    $default  reduce using rule 49 (itemStatement)
+
+
+State 46
+
+   50 itemStatement: SimpleStat .
+
+    $default  reduce using rule 50 (itemStatement)
+
+
+State 47
+
+   51 itemStatement: ConditionStat .
+
+    $default  reduce using rule 51 (itemStatement)
+
+
+State 48
+
+   52 itemStatement: WhileStat .
+
+    $default  reduce using rule 52 (itemStatement)
+
+
+State 49
+
+   53 itemStatement: ForStat .
+
+    $default  reduce using rule 53 (itemStatement)
+
+
+State 50
+
+   54 itemStatement: ReturnStat .
+
+    $default  reduce using rule 54 (itemStatement)
+
+
+State 51
+
+   55 itemStatement: FunCall .
+   66 FunCall: FunCall . itemFunCall
+
+    ID  shift, and go to state 100
+
+    ID        [reduce using rule 55 (itemStatement)]
+    $default  reduce using rule 55 (itemStatement)
+
+    itemFunCall  go to state 101
+
+
+State 52
+
+   67 FunCall: itemFunCall .
+
+    $default  reduce using rule 67 (FunCall)
+
+
+State 53
+
+   58 SimpleStat: VarRefer . ASSIGN Expr ';'
+
+    ASSIGN  shift, and go to state 102
+
+
+State 54
+
+    4 itemProgram: ID ';' VarConFunDecDef CompStat end .
+
+    $default  reduce using rule 4 (itemProgram)
+
+
+State 55
+
+   38 FuncDec: ID '(' ')' ';' .
+
+    $default  reduce using rule 38 (FuncDec)
+
+
+State 56
+
+   36 FuncDec: ID '(' ')' ':' . ScalType ';'
+   42 FuncDef: ID '(' ')' ':' . ScalType CompStat end
+
+    BOOLEAN  shift, and go to state 65
+    INTEGER  shift, and go to state 66
+    REAL     shift, and go to state 67
+    STRING   shift, and go to state 68
+
+    ScalType  go to state 103
+
+
+State 57
+
+   44 FuncDef: ID '(' ')' CompStat . end
+
+    end  shift, and go to state 104
+
+
+State 58
+
+   41 argument: IdList ':' . ScalType
+
+    BOOLEAN  shift, and go to state 65
+    INTEGER  shift, and go to state 66
+    REAL     shift, and go to state 67
+    STRING   shift, and go to state 68
+
+    ScalType  go to state 105
+
+
+State 59
+
+   40 argument: argument ';' . IdList ':' ScalType
+
+    ID  shift, and go to state 22
+
+    IdList  go to state 106
+
+
+State 60
+
+   37 FuncDec: ID '(' argument ')' . ':' ScalType ';'
+   39        | ID '(' argument ')' . ';'
+   43 FuncDef: ID '(' argument ')' . ':' ScalType CompStat end
+   45        | ID '(' argument ')' . CompStat end
+
+    begin  shift, and go to state 9
+    ';'    shift, and go to state 107
+    ':'    shift, and go to state 108
+
+    CompStat  go to state 109
+
+
+State 61
+
+   25 IdList: IdList ',' ID .
+
+    $default  reduce using rule 25 (IdList)
+
+
+State 62
+
+   29 LiterConstant: CHAR .
+
+    $default  reduce using rule 29 (LiterConstant)
+
+
+State 63
+
+   27 LiterConstant: NUM .
+
+    $default  reduce using rule 27 (LiterConstant)
+
+
+State 64
+
+   24 itemArrayDim: ARRAY . NUM OF
+
+    NUM  shift, and go to state 110
+
+
+State 65
+
+   18 ScalType: BOOLEAN .
+
+    $default  reduce using rule 18 (ScalType)
+
+
+State 66
+
+   17 ScalType: INTEGER .
+
+    $default  reduce using rule 17 (ScalType)
+
+
+State 67
+
+   19 ScalType: REAL .
+
+    $default  reduce using rule 19 (ScalType)
+
+
+State 68
+
+   20 ScalType: STRING .
+
+    $default  reduce using rule 20 (ScalType)
+
+
+State 69
+
+   30 LiterConstant: TRUE .
+
+    $default  reduce using rule 30 (LiterConstant)
+
+
+State 70
+
+   31 LiterConstant: FALSE .
+
+    $default  reduce using rule 31 (LiterConstant)
+
+
+State 71
+
+   28 LiterConstant: '-' . NUM
+
+    NUM  shift, and go to state 111
+
+
+State 72
+
+   14 VarDecl: VAR IdList ':' ScalType . ';'
+
+    ';'  shift, and go to state 112
+
+
+State 73
+
+   15 VarDecl: VAR IdList ':' ArrayType . ';'
+
+    ';'  shift, and go to state 113
+
+
+State 74
+
+   21 ArrayType: ArrayDim . ScalType
+   22 ArrayDim: ArrayDim . itemArrayDim
+
+    ARRAY    shift, and go to state 64
+    BOOLEAN  shift, and go to state 65
+    INTEGER  shift, and go to state 66
+    REAL     shift, and go to state 67
+    STRING   shift, and go to state 68
+
+    ScalType      go to state 114
+    itemArrayDim  go to state 115
+
+
+State 75
+
+   23 ArrayDim: itemArrayDim .
+
+    $default  reduce using rule 23 (ArrayDim)
+
+
+State 76
+
+   16 Constant: VAR IdList ':' LiterConstant . ';'
+
+    ';'  shift, and go to state 116
+
+
+State 77
+
+   68 itemFunCall: ID '(' . ')' ';'
+   69            | ID '(' . ExprList ')' ';'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    ')'   shift, and go to state 117
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 118
+    itemExpr       go to state 88
+    ExprList       go to state 119
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 78
+
+   73 Wrapped: '[' . Expr ']'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 120
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 79
+
+   71 VarRefer: ID Wrapped .
+   72 Wrapped: Wrapped . '[' Expr ']'
+
+    '['  shift, and go to state 121
+
+    $default  reduce using rule 71 (VarRefer)
+
+
+State 80
+
+   70 VarRefer: ID .
+   71         | ID . Wrapped
+   84 FunCallNotSem: ID . '(' ')'
+   85              | ID . '(' ExprList ')'
+
+    '('  shift, and go to state 122
+    '['  shift, and go to state 78
+
+    '('       [reduce using rule 70 (VarRefer)]
+    $default  reduce using rule 70 (VarRefer)
+
+    Wrapped  go to state 79
+
+
+State 81
+
+   76 itemExpr: CHAR .
+   94 AritExpr: CHAR .
+
+    ID            reduce using rule 76 (itemExpr)
+    ID            [reduce using rule 94 (AritExpr)]
+    CHAR          reduce using rule 76 (itemExpr)
+    CHAR          [reduce using rule 94 (AritExpr)]
+    NUM           reduce using rule 76 (itemExpr)
+    NUM           [reduce using rule 94 (AritExpr)]
+    DO            reduce using rule 76 (itemExpr)
+    DO            [reduce using rule 94 (AritExpr)]
+    THEN          reduce using rule 76 (itemExpr)
+    THEN          [reduce using rule 94 (AritExpr)]
+    TO            reduce using rule 76 (itemExpr)
+    TO            [reduce using rule 94 (AritExpr)]
+    ','           reduce using rule 76 (itemExpr)
+    ','           [reduce using rule 94 (AritExpr)]
+    ';'           reduce using rule 76 (itemExpr)
+    ';'           [reduce using rule 94 (AritExpr)]
+    '('           reduce using rule 76 (itemExpr)
+    '('           [reduce using rule 94 (AritExpr)]
+    ')'           reduce using rule 76 (itemExpr)
+    ')'           [reduce using rule 94 (AritExpr)]
+    ']'           reduce using rule 76 (itemExpr)
+    ']'           [reduce using rule 94 (AritExpr)]
+    AND           reduce using rule 94 (AritExpr)
+    OR            reduce using rule 94 (AritExpr)
+    '<'           reduce using rule 94 (AritExpr)
+    '>'           reduce using rule 94 (AritExpr)
+    '='           reduce using rule 94 (AritExpr)
+    GreaterEqual  reduce using rule 94 (AritExpr)
+    LessEqual     reduce using rule 94 (AritExpr)
+    NotEqual      reduce using rule 94 (AritExpr)
+    '+'           reduce using rule 94 (AritExpr)
+    '-'           reduce using rule 76 (itemExpr)
+    '-'           [reduce using rule 94 (AritExpr)]
+    '*'           reduce using rule 94 (AritExpr)
+    '/'           reduce using rule 94 (AritExpr)
+    MOD           reduce using rule 94 (AritExpr)
+    NOT           reduce using rule 76 (itemExpr)
+    NOT           [reduce using rule 94 (AritExpr)]
+    $default      reduce using rule 76 (itemExpr)
+
+
+State 82
+
+   77 itemExpr: NUM .
+   93 AritExpr: NUM .
+
+    ID            reduce using rule 77 (itemExpr)
+    ID            [reduce using rule 93 (AritExpr)]
+    CHAR          reduce using rule 77 (itemExpr)
+    CHAR          [reduce using rule 93 (AritExpr)]
+    NUM           reduce using rule 77 (itemExpr)
+    NUM           [reduce using rule 93 (AritExpr)]
+    DO            reduce using rule 77 (itemExpr)
+    DO            [reduce using rule 93 (AritExpr)]
+    THEN          reduce using rule 77 (itemExpr)
+    THEN          [reduce using rule 93 (AritExpr)]
+    TO            reduce using rule 77 (itemExpr)
+    TO            [reduce using rule 93 (AritExpr)]
+    ','           reduce using rule 77 (itemExpr)
+    ','           [reduce using rule 93 (AritExpr)]
+    ';'           reduce using rule 77 (itemExpr)
+    ';'           [reduce using rule 93 (AritExpr)]
+    '('           reduce using rule 77 (itemExpr)
+    '('           [reduce using rule 93 (AritExpr)]
+    ')'           reduce using rule 77 (itemExpr)
+    ')'           [reduce using rule 93 (AritExpr)]
+    ']'           reduce using rule 77 (itemExpr)
+    ']'           [reduce using rule 93 (AritExpr)]
+    AND           reduce using rule 93 (AritExpr)
+    OR            reduce using rule 93 (AritExpr)
+    '<'           reduce using rule 93 (AritExpr)
+    '>'           reduce using rule 93 (AritExpr)
+    '='           reduce using rule 93 (AritExpr)
+    GreaterEqual  reduce using rule 93 (AritExpr)
+    LessEqual     reduce using rule 93 (AritExpr)
+    NotEqual      reduce using rule 93 (AritExpr)
+    '+'           reduce using rule 93 (AritExpr)
+    '-'           reduce using rule 77 (itemExpr)
+    '-'           [reduce using rule 93 (AritExpr)]
+    '*'           reduce using rule 93 (AritExpr)
+    '/'           reduce using rule 93 (AritExpr)
+    MOD           reduce using rule 93 (AritExpr)
+    NOT           reduce using rule 77 (itemExpr)
+    NOT           [reduce using rule 93 (AritExpr)]
+    $default      reduce using rule 77 (itemExpr)
+
+
+State 83
+
+   87 AritExpr: '(' . AritExpr ')'
+  106 LogicExpr: '(' . LogicExpr ')'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 127
+    LogicExpr      go to state 128
+
+
+State 84
+
+   86 AritExpr: '-' . AritExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 130
+
+
+State 85
+
+  105 LogicExpr: NOT . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 132
+
+
+State 86
+
+   78 itemExpr: VarRefer .
+   95 AritExpr: VarRefer .
+
+    ID            reduce using rule 78 (itemExpr)
+    ID            [reduce using rule 95 (AritExpr)]
+    CHAR          reduce using rule 78 (itemExpr)
+    CHAR          [reduce using rule 95 (AritExpr)]
+    NUM           reduce using rule 78 (itemExpr)
+    NUM           [reduce using rule 95 (AritExpr)]
+    DO            reduce using rule 78 (itemExpr)
+    DO            [reduce using rule 95 (AritExpr)]
+    THEN          reduce using rule 78 (itemExpr)
+    THEN          [reduce using rule 95 (AritExpr)]
+    TO            reduce using rule 78 (itemExpr)
+    TO            [reduce using rule 95 (AritExpr)]
+    ','           reduce using rule 78 (itemExpr)
+    ','           [reduce using rule 95 (AritExpr)]
+    ';'           reduce using rule 78 (itemExpr)
+    ';'           [reduce using rule 95 (AritExpr)]
+    '('           reduce using rule 78 (itemExpr)
+    '('           [reduce using rule 95 (AritExpr)]
+    ')'           reduce using rule 78 (itemExpr)
+    ')'           [reduce using rule 95 (AritExpr)]
+    ']'           reduce using rule 78 (itemExpr)
+    ']'           [reduce using rule 95 (AritExpr)]
+    AND           reduce using rule 95 (AritExpr)
+    OR            reduce using rule 95 (AritExpr)
+    '<'           reduce using rule 95 (AritExpr)
+    '>'           reduce using rule 95 (AritExpr)
+    '='           reduce using rule 95 (AritExpr)
+    GreaterEqual  reduce using rule 95 (AritExpr)
+    LessEqual     reduce using rule 95 (AritExpr)
+    NotEqual      reduce using rule 95 (AritExpr)
+    '+'           reduce using rule 95 (AritExpr)
+    '-'           reduce using rule 78 (itemExpr)
+    '-'           [reduce using rule 95 (AritExpr)]
+    '*'           reduce using rule 95 (AritExpr)
+    '/'           reduce using rule 95 (AritExpr)
+    MOD           reduce using rule 95 (AritExpr)
+    NOT           reduce using rule 78 (itemExpr)
+    NOT           [reduce using rule 95 (AritExpr)]
+    $default      reduce using rule 78 (itemExpr)
+
+
+State 87
+
+   65 ReturnStat: RETURN Expr . ';'
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    ';'   shift, and go to state 133
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 88
+
+   75 Expr: itemExpr .
+
+    $default  reduce using rule 75 (Expr)
+
+
+State 89
+
+   79 itemExpr: FunCallNotSem .
+   96 AritExpr: FunCallNotSem .
+
+    ID            reduce using rule 79 (itemExpr)
+    ID            [reduce using rule 96 (AritExpr)]
+    CHAR          reduce using rule 79 (itemExpr)
+    CHAR          [reduce using rule 96 (AritExpr)]
+    NUM           reduce using rule 79 (itemExpr)
+    NUM           [reduce using rule 96 (AritExpr)]
+    DO            reduce using rule 79 (itemExpr)
+    DO            [reduce using rule 96 (AritExpr)]
+    THEN          reduce using rule 79 (itemExpr)
+    THEN          [reduce using rule 96 (AritExpr)]
+    TO            reduce using rule 79 (itemExpr)
+    TO            [reduce using rule 96 (AritExpr)]
+    ','           reduce using rule 79 (itemExpr)
+    ','           [reduce using rule 96 (AritExpr)]
+    ';'           reduce using rule 79 (itemExpr)
+    ';'           [reduce using rule 96 (AritExpr)]
+    '('           reduce using rule 79 (itemExpr)
+    '('           [reduce using rule 96 (AritExpr)]
+    ')'           reduce using rule 79 (itemExpr)
+    ')'           [reduce using rule 96 (AritExpr)]
+    ']'           reduce using rule 79 (itemExpr)
+    ']'           [reduce using rule 96 (AritExpr)]
+    AND           reduce using rule 96 (AritExpr)
+    OR            reduce using rule 96 (AritExpr)
+    '<'           reduce using rule 96 (AritExpr)
+    '>'           reduce using rule 96 (AritExpr)
+    '='           reduce using rule 96 (AritExpr)
+    GreaterEqual  reduce using rule 96 (AritExpr)
+    LessEqual     reduce using rule 96 (AritExpr)
+    NotEqual      reduce using rule 96 (AritExpr)
+    '+'           reduce using rule 96 (AritExpr)
+    '-'           reduce using rule 79 (itemExpr)
+    '-'           [reduce using rule 96 (AritExpr)]
+    '*'           reduce using rule 96 (AritExpr)
+    '/'           reduce using rule 96 (AritExpr)
+    MOD           reduce using rule 96 (AritExpr)
+    NOT           reduce using rule 79 (itemExpr)
+    NOT           [reduce using rule 96 (AritExpr)]
+    $default      reduce using rule 79 (itemExpr)
+
+
+State 90
+
+   80 itemExpr: AritExpr .
+   88 AritExpr: AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+  107 LogicExpr: AritExpr .
+
+    '+'  shift, and go to state 135
+    '-'  shift, and go to state 136
+    '*'  shift, and go to state 137
+    '/'  shift, and go to state 138
+    MOD  shift, and go to state 139
+
+    ID            reduce using rule 80 (itemExpr)
+    ID            [reduce using rule 107 (LogicExpr)]
+    CHAR          reduce using rule 80 (itemExpr)
+    CHAR          [reduce using rule 107 (LogicExpr)]
+    NUM           reduce using rule 80 (itemExpr)
+    NUM           [reduce using rule 107 (LogicExpr)]
+    DO            reduce using rule 80 (itemExpr)
+    DO            [reduce using rule 107 (LogicExpr)]
+    THEN          reduce using rule 80 (itemExpr)
+    THEN          [reduce using rule 107 (LogicExpr)]
+    TO            reduce using rule 80 (itemExpr)
+    TO            [reduce using rule 107 (LogicExpr)]
+    ','           reduce using rule 80 (itemExpr)
+    ','           [reduce using rule 107 (LogicExpr)]
+    ';'           reduce using rule 80 (itemExpr)
+    ';'           [reduce using rule 107 (LogicExpr)]
+    '('           reduce using rule 80 (itemExpr)
+    '('           [reduce using rule 107 (LogicExpr)]
+    ')'           reduce using rule 80 (itemExpr)
+    ')'           [reduce using rule 107 (LogicExpr)]
+    ']'           reduce using rule 80 (itemExpr)
+    ']'           [reduce using rule 107 (LogicExpr)]
+    AND           reduce using rule 107 (LogicExpr)
+    OR            reduce using rule 107 (LogicExpr)
+    '<'           reduce using rule 107 (LogicExpr)
+    '>'           reduce using rule 107 (LogicExpr)
+    '='           reduce using rule 107 (LogicExpr)
+    GreaterEqual  reduce using rule 107 (LogicExpr)
+    LessEqual     reduce using rule 107 (LogicExpr)
+    NotEqual      reduce using rule 107 (LogicExpr)
+    '-'           [reduce using rule 80 (itemExpr)]
+    '-'           [reduce using rule 107 (LogicExpr)]
+    NOT           reduce using rule 80 (itemExpr)
+    NOT           [reduce using rule 107 (LogicExpr)]
+    $default      reduce using rule 80 (itemExpr)
+
+
+State 91
+
+   81 itemExpr: LogicExpr .
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    AND           shift, and go to state 140
+    OR            shift, and go to state 141
+    '<'           shift, and go to state 142
+    '>'           shift, and go to state 143
+    '='           shift, and go to state 144
+    GreaterEqual  shift, and go to state 145
+    LessEqual     shift, and go to state 146
+    NotEqual      shift, and go to state 147
+
+    $default  reduce using rule 81 (itemExpr)
+
+
+State 92
+
+   63 WhileStat: WHILE Expr . DO CompStat end DO
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    DO    shift, and go to state 148
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 93
+
+   61 ConditionStat: IF Expr . THEN CompStat ELSE CompStat end IF
+   62              | IF Expr . THEN CompStat end IF
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    THEN  shift, and go to state 149
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 94
+
+   64 ForStat: FOR ID . ASSIGN Expr TO Expr DO CompStat end DO
+
+    ASSIGN  shift, and go to state 150
+
+
+State 95
+
+   59 SimpleStat: PRINT Expr . ';'
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    ';'   shift, and go to state 151
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 96
+
+   70 VarRefer: ID .
+   71         | ID . Wrapped
+
+    '['  shift, and go to state 78
+
+    $default  reduce using rule 70 (VarRefer)
+
+    Wrapped  go to state 79
+
+
+State 97
+
+   60 SimpleStat: READ VarRefer . ';'
+
+    ';'  shift, and go to state 152
+
+
+State 98
+
+   57 CompStat: begin VarConstant Statements end .
+
+    $default  reduce using rule 57 (CompStat)
+
+
+State 99
+
+   46 Statements: Statements itemStatement .
+
+    $default  reduce using rule 46 (Statements)
+
+
+State 100
+
+   68 itemFunCall: ID . '(' ')' ';'
+   69            | ID . '(' ExprList ')' ';'
+
+    '('  shift, and go to state 77
+
+
+State 101
+
+   66 FunCall: FunCall itemFunCall .
+
+    $default  reduce using rule 66 (FunCall)
+
+
+State 102
+
+   58 SimpleStat: VarRefer ASSIGN . Expr ';'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 153
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 103
+
+   36 FuncDec: ID '(' ')' ':' ScalType . ';'
+   42 FuncDef: ID '(' ')' ':' ScalType . CompStat end
+
+    begin  shift, and go to state 9
+    ';'    shift, and go to state 154
+
+    CompStat  go to state 155
+
+
+State 104
+
+   44 FuncDef: ID '(' ')' CompStat end .
+
+    $default  reduce using rule 44 (FuncDef)
+
+
+State 105
+
+   41 argument: IdList ':' ScalType .
+
+    $default  reduce using rule 41 (argument)
+
+
+State 106
+
+   25 IdList: IdList . ',' ID
+   40 argument: argument ';' IdList . ':' ScalType
+
+    ','  shift, and go to state 34
+    ':'  shift, and go to state 156
+
+
+State 107
+
+   39 FuncDec: ID '(' argument ')' ';' .
+
+    $default  reduce using rule 39 (FuncDec)
+
+
+State 108
+
+   37 FuncDec: ID '(' argument ')' ':' . ScalType ';'
+   43 FuncDef: ID '(' argument ')' ':' . ScalType CompStat end
+
+    BOOLEAN  shift, and go to state 65
+    INTEGER  shift, and go to state 66
+    REAL     shift, and go to state 67
+    STRING   shift, and go to state 68
+
+    ScalType  go to state 157
+
+
+State 109
+
+   45 FuncDef: ID '(' argument ')' CompStat . end
+
+    end  shift, and go to state 158
+
+
+State 110
+
+   24 itemArrayDim: ARRAY NUM . OF
+
+    OF  shift, and go to state 159
+
+
+State 111
+
+   28 LiterConstant: '-' NUM .
+
+    $default  reduce using rule 28 (LiterConstant)
+
+
+State 112
+
+   14 VarDecl: VAR IdList ':' ScalType ';' .
+
+    $default  reduce using rule 14 (VarDecl)
+
+
+State 113
+
+   15 VarDecl: VAR IdList ':' ArrayType ';' .
+
+    $default  reduce using rule 15 (VarDecl)
+
+
+State 114
+
+   21 ArrayType: ArrayDim ScalType .
+
+    $default  reduce using rule 21 (ArrayType)
+
+
+State 115
+
+   22 ArrayDim: ArrayDim itemArrayDim .
+
+    $default  reduce using rule 22 (ArrayDim)
+
+
+State 116
+
+   16 Constant: VAR IdList ':' LiterConstant ';' .
+
+    $default  reduce using rule 16 (Constant)
+
+
+State 117
+
+   68 itemFunCall: ID '(' ')' . ';'
+
+    ';'  shift, and go to state 160
+
+
+State 118
+
+   74 Expr: Expr . itemExpr
+   83 ExprList: Expr .
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    $default  reduce using rule 83 (ExprList)
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 119
+
+   69 itemFunCall: ID '(' ExprList . ')' ';'
+   82 ExprList: ExprList . ',' Expr
+
+    ','  shift, and go to state 161
+    ')'  shift, and go to state 162
+
+
+State 120
+
+   73 Wrapped: '[' Expr . ']'
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    ']'   shift, and go to state 163
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 121
+
+   72 Wrapped: Wrapped '[' . Expr ']'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 164
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 122
+
+   84 FunCallNotSem: ID '(' . ')'
+   85              | ID '(' . ExprList ')'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    ')'   shift, and go to state 165
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 118
+    itemExpr       go to state 88
+    ExprList       go to state 166
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 123
+
+   94 AritExpr: CHAR .
+
+    $default  reduce using rule 94 (AritExpr)
+
+
+State 124
+
+   93 AritExpr: NUM .
+
+    $default  reduce using rule 93 (AritExpr)
+
+
+State 125
+
+   95 AritExpr: VarRefer .
+
+    $default  reduce using rule 95 (AritExpr)
+
+
+State 126
+
+   96 AritExpr: FunCallNotSem .
+
+    $default  reduce using rule 96 (AritExpr)
+
+
+State 127
+
+   87 AritExpr: '(' AritExpr . ')'
+   88         | AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+  107 LogicExpr: AritExpr .
+
+    ')'  shift, and go to state 167
+    '+'  shift, and go to state 135
+    '-'  shift, and go to state 136
+    '*'  shift, and go to state 137
+    '/'  shift, and go to state 138
+    MOD  shift, and go to state 139
+
+    ')'       [reduce using rule 107 (LogicExpr)]
+    $default  reduce using rule 107 (LogicExpr)
+
+
+State 128
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+  106          | '(' LogicExpr . ')'
+
+    ')'           shift, and go to state 168
+    AND           shift, and go to state 140
+    OR            shift, and go to state 141
+    '<'           shift, and go to state 142
+    '>'           shift, and go to state 143
+    '='           shift, and go to state 144
+    GreaterEqual  shift, and go to state 145
+    LessEqual     shift, and go to state 146
+    NotEqual      shift, and go to state 147
+
+
+State 129
+
+   87 AritExpr: '(' . AritExpr ')'
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 169
+
+
+State 130
+
+   86 AritExpr: '-' AritExpr .
+   88         | AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+
+    $default  reduce using rule 86 (AritExpr)
+
+
+State 131
+
+   88 AritExpr: AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+  107 LogicExpr: AritExpr .
+
+    '+'  shift, and go to state 135
+    '-'  shift, and go to state 136
+    '*'  shift, and go to state 137
+    '/'  shift, and go to state 138
+    MOD  shift, and go to state 139
+
+    '-'       [reduce using rule 107 (LogicExpr)]
+    $default  reduce using rule 107 (LogicExpr)
+
+
+State 132
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+  105          | NOT LogicExpr .
+
+    $default  reduce using rule 105 (LogicExpr)
+
+
+State 133
+
+   65 ReturnStat: RETURN Expr ';' .
+
+    $default  reduce using rule 65 (ReturnStat)
+
+
+State 134
+
+   74 Expr: Expr itemExpr .
+
+    $default  reduce using rule 74 (Expr)
+
+
+State 135
+
+   88 AritExpr: AritExpr '+' . AritExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 170
+
+
+State 136
+
+   89 AritExpr: AritExpr '-' . AritExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 171
+
+
+State 137
+
+   90 AritExpr: AritExpr '*' . AritExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 172
+
+
+State 138
+
+   91 AritExpr: AritExpr '/' . AritExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 173
+
+
+State 139
+
+   92 AritExpr: AritExpr MOD . AritExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 129
+    '-'   shift, and go to state 84
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 174
+
+
+State 140
+
+  103 LogicExpr: LogicExpr AND . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 175
+
+
+State 141
+
+  104 LogicExpr: LogicExpr OR . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 176
+
+
+State 142
+
+   98 LogicExpr: LogicExpr '<' . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 177
+
+
+State 143
+
+   97 LogicExpr: LogicExpr '>' . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 178
+
+
+State 144
+
+   99 LogicExpr: LogicExpr '=' . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 179
+
+
+State 145
+
+  100 LogicExpr: LogicExpr GreaterEqual . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 180
+
+
+State 146
+
+  101 LogicExpr: LogicExpr LessEqual . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 181
+
+
+State 147
+
+  102 LogicExpr: LogicExpr NotEqual . LogicExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 123
+    NUM   shift, and go to state 124
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 125
+    FunCallNotSem  go to state 126
+    AritExpr       go to state 131
+    LogicExpr      go to state 182
+
+
+State 148
+
+   63 WhileStat: WHILE Expr DO . CompStat end DO
+
+    begin  shift, and go to state 9
+
+    CompStat  go to state 183
+
+
+State 149
+
+   61 ConditionStat: IF Expr THEN . CompStat ELSE CompStat end IF
+   62              | IF Expr THEN . CompStat end IF
+
+    begin  shift, and go to state 9
+
+    CompStat  go to state 184
+
+
+State 150
+
+   64 ForStat: FOR ID ASSIGN . Expr TO Expr DO CompStat end DO
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 185
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 151
+
+   59 SimpleStat: PRINT Expr ';' .
+
+    $default  reduce using rule 59 (SimpleStat)
+
+
+State 152
+
+   60 SimpleStat: READ VarRefer ';' .
+
+    $default  reduce using rule 60 (SimpleStat)
+
+
+State 153
+
+   58 SimpleStat: VarRefer ASSIGN Expr . ';'
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    ';'   shift, and go to state 186
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 154
+
+   36 FuncDec: ID '(' ')' ':' ScalType ';' .
+
+    $default  reduce using rule 36 (FuncDec)
+
+
+State 155
+
+   42 FuncDef: ID '(' ')' ':' ScalType CompStat . end
+
+    end  shift, and go to state 187
+
+
+State 156
+
+   40 argument: argument ';' IdList ':' . ScalType
+
+    BOOLEAN  shift, and go to state 65
+    INTEGER  shift, and go to state 66
+    REAL     shift, and go to state 67
+    STRING   shift, and go to state 68
+
+    ScalType  go to state 188
+
+
+State 157
+
+   37 FuncDec: ID '(' argument ')' ':' ScalType . ';'
+   43 FuncDef: ID '(' argument ')' ':' ScalType . CompStat end
+
+    begin  shift, and go to state 9
+    ';'    shift, and go to state 189
+
+    CompStat  go to state 190
+
+
+State 158
+
+   45 FuncDef: ID '(' argument ')' CompStat end .
+
+    $default  reduce using rule 45 (FuncDef)
+
+
+State 159
+
+   24 itemArrayDim: ARRAY NUM OF .
+
+    $default  reduce using rule 24 (itemArrayDim)
+
+
+State 160
+
+   68 itemFunCall: ID '(' ')' ';' .
+
+    $default  reduce using rule 68 (itemFunCall)
+
+
+State 161
+
+   82 ExprList: ExprList ',' . Expr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 191
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 162
+
+   69 itemFunCall: ID '(' ExprList ')' . ';'
+
+    ';'  shift, and go to state 192
+
+
+State 163
+
+   73 Wrapped: '[' Expr ']' .
+
+    $default  reduce using rule 73 (Wrapped)
+
+
+State 164
+
+   72 Wrapped: Wrapped '[' Expr . ']'
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    ']'   shift, and go to state 193
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 165
+
+   84 FunCallNotSem: ID '(' ')' .
+
+    $default  reduce using rule 84 (FunCallNotSem)
+
+
+State 166
+
+   82 ExprList: ExprList . ',' Expr
+   85 FunCallNotSem: ID '(' ExprList . ')'
+
+    ','  shift, and go to state 161
+    ')'  shift, and go to state 194
+
+
+State 167
+
+   87 AritExpr: '(' AritExpr ')' .
+
+    $default  reduce using rule 87 (AritExpr)
+
+
+State 168
+
+  106 LogicExpr: '(' LogicExpr ')' .
+
+    $default  reduce using rule 106 (LogicExpr)
+
+
+State 169
+
+   87 AritExpr: '(' AritExpr . ')'
+   88         | AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+
+    ')'  shift, and go to state 167
+    '+'  shift, and go to state 135
+    '-'  shift, and go to state 136
+    '*'  shift, and go to state 137
+    '/'  shift, and go to state 138
+    MOD  shift, and go to state 139
+
+
+State 170
+
+   88 AritExpr: AritExpr . '+' AritExpr
+   88         | AritExpr '+' AritExpr .
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+
+    '*'  shift, and go to state 137
+    '/'  shift, and go to state 138
+    MOD  shift, and go to state 139
+
+    $default  reduce using rule 88 (AritExpr)
+
+
+State 171
+
+   88 AritExpr: AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   89         | AritExpr '-' AritExpr .
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+
+    '*'  shift, and go to state 137
+    '/'  shift, and go to state 138
+    MOD  shift, and go to state 139
+
+    $default  reduce using rule 89 (AritExpr)
+
+
+State 172
+
+   88 AritExpr: AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   90         | AritExpr '*' AritExpr .
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+
+    $default  reduce using rule 90 (AritExpr)
+
+
+State 173
+
+   88 AritExpr: AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   91         | AritExpr '/' AritExpr .
+   92         | AritExpr . MOD AritExpr
+
+    $default  reduce using rule 91 (AritExpr)
+
+
+State 174
+
+   88 AritExpr: AritExpr . '+' AritExpr
+   89         | AritExpr . '-' AritExpr
+   90         | AritExpr . '*' AritExpr
+   91         | AritExpr . '/' AritExpr
+   92         | AritExpr . MOD AritExpr
+   92         | AritExpr MOD AritExpr .
+
+    $default  reduce using rule 92 (AritExpr)
+
+
+State 175
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  103          | LogicExpr AND LogicExpr .
+  104          | LogicExpr . OR LogicExpr
+
+    '<'           shift, and go to state 142
+    '>'           shift, and go to state 143
+    '='           shift, and go to state 144
+    GreaterEqual  shift, and go to state 145
+    LessEqual     shift, and go to state 146
+    NotEqual      shift, and go to state 147
+
+    $default  reduce using rule 103 (LogicExpr)
+
+
+State 176
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+  104          | LogicExpr OR LogicExpr .
+
+    '<'           shift, and go to state 142
+    '>'           shift, and go to state 143
+    '='           shift, and go to state 144
+    GreaterEqual  shift, and go to state 145
+    LessEqual     shift, and go to state 146
+    NotEqual      shift, and go to state 147
+
+    $default  reduce using rule 104 (LogicExpr)
+
+
+State 177
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   98          | LogicExpr '<' LogicExpr .
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    $default  reduce using rule 98 (LogicExpr)
+
+
+State 178
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   97          | LogicExpr '>' LogicExpr .
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    $default  reduce using rule 97 (LogicExpr)
+
+
+State 179
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+   99          | LogicExpr '=' LogicExpr .
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    $default  reduce using rule 99 (LogicExpr)
+
+
+State 180
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  100          | LogicExpr GreaterEqual LogicExpr .
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    $default  reduce using rule 100 (LogicExpr)
+
+
+State 181
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  101          | LogicExpr LessEqual LogicExpr .
+  102          | LogicExpr . NotEqual LogicExpr
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    $default  reduce using rule 101 (LogicExpr)
+
+
+State 182
+
+   97 LogicExpr: LogicExpr . '>' LogicExpr
+   98          | LogicExpr . '<' LogicExpr
+   99          | LogicExpr . '=' LogicExpr
+  100          | LogicExpr . GreaterEqual LogicExpr
+  101          | LogicExpr . LessEqual LogicExpr
+  102          | LogicExpr . NotEqual LogicExpr
+  102          | LogicExpr NotEqual LogicExpr .
+  103          | LogicExpr . AND LogicExpr
+  104          | LogicExpr . OR LogicExpr
+
+    $default  reduce using rule 102 (LogicExpr)
+
+
+State 183
+
+   63 WhileStat: WHILE Expr DO CompStat . end DO
+
+    end  shift, and go to state 195
+
+
+State 184
+
+   61 ConditionStat: IF Expr THEN CompStat . ELSE CompStat end IF
+   62              | IF Expr THEN CompStat . end IF
+
+    end   shift, and go to state 196
+    ELSE  shift, and go to state 197
+
+
+State 185
+
+   64 ForStat: FOR ID ASSIGN Expr . TO Expr DO CompStat end DO
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    TO    shift, and go to state 198
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 186
+
+   58 SimpleStat: VarRefer ASSIGN Expr ';' .
+
+    $default  reduce using rule 58 (SimpleStat)
+
+
+State 187
+
+   42 FuncDef: ID '(' ')' ':' ScalType CompStat end .
+
+    $default  reduce using rule 42 (FuncDef)
+
+
+State 188
+
+   40 argument: argument ';' IdList ':' ScalType .
+
+    $default  reduce using rule 40 (argument)
+
+
+State 189
+
+   37 FuncDec: ID '(' argument ')' ':' ScalType ';' .
+
+    $default  reduce using rule 37 (FuncDec)
+
+
+State 190
+
+   43 FuncDef: ID '(' argument ')' ':' ScalType CompStat . end
+
+    end  shift, and go to state 199
+
+
+State 191
+
+   74 Expr: Expr . itemExpr
+   82 ExprList: ExprList ',' Expr .
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    $default  reduce using rule 82 (ExprList)
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 192
+
+   69 itemFunCall: ID '(' ExprList ')' ';' .
+
+    $default  reduce using rule 69 (itemFunCall)
+
+
+State 193
+
+   72 Wrapped: Wrapped '[' Expr ']' .
+
+    $default  reduce using rule 72 (Wrapped)
+
+
+State 194
+
+   85 FunCallNotSem: ID '(' ExprList ')' .
+
+    $default  reduce using rule 85 (FunCallNotSem)
+
+
+State 195
+
+   63 WhileStat: WHILE Expr DO CompStat end . DO
+
+    DO  shift, and go to state 200
+
+
+State 196
+
+   62 ConditionStat: IF Expr THEN CompStat end . IF
+
+    IF  shift, and go to state 201
+
+
+State 197
+
+   61 ConditionStat: IF Expr THEN CompStat ELSE . CompStat end IF
+
+    begin  shift, and go to state 9
+
+    CompStat  go to state 202
+
+
+State 198
+
+   64 ForStat: FOR ID ASSIGN Expr TO . Expr DO CompStat end DO
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    Expr           go to state 203
+    itemExpr       go to state 88
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 199
+
+   43 FuncDef: ID '(' argument ')' ':' ScalType CompStat end .
+
+    $default  reduce using rule 43 (FuncDef)
+
+
+State 200
+
+   63 WhileStat: WHILE Expr DO CompStat end DO .
+
+    $default  reduce using rule 63 (WhileStat)
+
+
+State 201
+
+   62 ConditionStat: IF Expr THEN CompStat end IF .
+
+    $default  reduce using rule 62 (ConditionStat)
+
+
+State 202
+
+   61 ConditionStat: IF Expr THEN CompStat ELSE CompStat . end IF
+
+    end  shift, and go to state 204
+
+
+State 203
+
+   64 ForStat: FOR ID ASSIGN Expr TO Expr . DO CompStat end DO
+   74 Expr: Expr . itemExpr
+
+    ID    shift, and go to state 80
+    CHAR  shift, and go to state 81
+    NUM   shift, and go to state 82
+    DO    shift, and go to state 205
+    '('   shift, and go to state 83
+    '-'   shift, and go to state 84
+    NOT   shift, and go to state 85
+
+    VarRefer       go to state 86
+    itemExpr       go to state 134
+    FunCallNotSem  go to state 89
+    AritExpr       go to state 90
+    LogicExpr      go to state 91
+
+
+State 204
+
+   61 ConditionStat: IF Expr THEN CompStat ELSE CompStat end . IF
+
+    IF  shift, and go to state 206
+
+
+State 205
+
+   64 ForStat: FOR ID ASSIGN Expr TO Expr DO . CompStat end DO
+
+    begin  shift, and go to state 9
+
+    CompStat  go to state 207
+
+
+State 206
+
+   61 ConditionStat: IF Expr THEN CompStat ELSE CompStat end IF .
+
+    $default  reduce using rule 61 (ConditionStat)
+
+
+State 207
+
+   64 ForStat: FOR ID ASSIGN Expr TO Expr DO CompStat . end DO
+
+    end  shift, and go to state 208
+
+
+State 208
+
+   64 ForStat: FOR ID ASSIGN Expr TO Expr DO CompStat end . DO
+
+    DO  shift, and go to state 209
+
+
+State 209
+
+   64 ForStat: FOR ID ASSIGN Expr TO Expr DO CompStat end DO .
+
+    $default  reduce using rule 64 (ForStat)
