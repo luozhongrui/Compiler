@@ -1,0 +1,1220 @@
+make
+ls
+make clean
+clear
+make
+make
+make
+make
+make
+clear
+make
+make
+clear
+make clean
+make 
+clear
+make clean
+clear
+mak
+make
+make
+clear
+make clean
+clear
+make
+make clean
+make clean
+clear
+make
+make clean
+make
+clear
+make clean
+clear
+make
+clear
+make clean
+clear
+make
+clear
+make clean
+clear
+make
+make clean
+clear
+make 
+clear
+make clean
+clear
+make
+make clean
+clear
+make clearn
+make clean
+clear
+make
+make clean
+clear
+make
+make
+clear
+make clean
+clear
+make
+clear
+make clean
+clear
+make
+clear
+make clean
+clear
+make
+make
+make
+cd src/
+ls
+./parser ../test/basic_cases/test_cases/1_program.p 
+make clean
+clear
+make clean
+make
+./parser
+./parser --dump-ast
+clear
+make clean
+make clean
+clear
+make
+make
+make
+make clean
+clear
+make
+make
+make
+./parser --dump-ast ../test/basic_cases/test_cases/1_program.p 
+./parser --dump-ast ../test/basic_cases/test_cases/1_program.p 
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+clear
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make clean
+clear
+make
+make
+make
+clear
+make
+make
+make
+clear
+make
+clear
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+gdb ./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+gdb --help
+clear
+make clean
+make
+clear
+make
+./parser
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make clean
+clear
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+clear
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+clear
+make
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+clear
+make
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make clean
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make clean
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make
+make
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make
+make clean
+clar
+clear
+make
+make
+make
+claer
+clear
+make
+make
+clear
+make
+clear
+make
+clear
+make
+clear
+make
+make
+clear
+make
+clear
+make
+clear
+make
+clear
+make
+clear
+make
+clear
+make
+clear
+make
+ls
+cd src/
+ls
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+gdb
+gdb
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/1_program.p  --dump-ast
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+gdb
+clear
+gdb
+gdb parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+gdb parser
+sudo i-
+sudo -i
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+./parser ../test/basic_cases/test_cases/1_program.p 
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+exit
+make
+cd src/
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+./parser ../test/basic_cases/test_cases/1_program.p 
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+make
+make
+cd src/
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+./parser test.p
+./parser test.p --ast-dump
+./parser test.p --ast-dump
+./parser test.p --ast-dump
+make
+./parser test.p 
+./parser test.p 
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+clear
+make
+make
+clear
+make
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+clear
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+clear
+./parser test.p --dump-ast
+make clean
+clear
+make
+clear
+make
+make
+clear
+make
+make
+make
+clear
+make
+./parser ../test/basic_cases/test_cases/1_program.p 
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p
+./parser test.p 
+clear
+./parser test.p 
+./parser test.p 
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p 
+./parser test.p 
+make
+clar
+clear
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+clear
+./parser test.p 
+./parser test.p --dump-ast
+clear
+make
+./parser test.p --dump-ast
+./parser ../test/basic_cases/test_cases/1_program.p 
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+clar
+clear
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+make
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p 
+./parser test.p 
+clear
+make
+./parser test.p 
+make
+./parser test.p 
+./parser test.p 
+clear
+./parser test.p 
+./parser test.p 
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+clear
+./parser test.p 
+clear
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+./parser test.p 
+make
+make
+./parser test.p 
+make
+make
+make
+make
+make
+./parser test.p 
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+make
+./parser test.p 
+./parser test.p 
+make
+./parser test.p 
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+./parser test.p 
+make
+clear
+./parser test.p 
+./parser test.p 
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+make
+./parser test.p 
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+./parser test.p 
+make
+./parser test.p 
+make
+make
+./parser test.p 
+clear
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+make
+clear
+make
+clear
+make
+make
+make
+make
+make
+clear
+make
+make
+make
+make
+make
+./parser test.p 
+./parser test.p 
+make
+make
+./parser test.p 
+make
+make
+make
+make
+clear
+make
+make
+make
+make
+make
+clear
+make
+make
+make
+./parser test.p 
+./parser test.p 
+clear
+./parser test.p 
+clear
+make
+./parser test.p 
+clar
+clear
+make
+clear
+make
+clear
+make
+./parser test.p 
+./parser test.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+make
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+clear
+./parser test.p  --dump-ast
+clear
+make
+./parser test.p  --dump-ast
+clear
+make
+./parser test.p  --dump-ast
+clear
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+clear
+make
+make
+./parser test.p  --dump-ast
+make
+make
+./parser test.p  --dump-ast
+make
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make
+./parser test.p  --dump-ast
+make clean
+clear
+make
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+make clean
+clear
+make
+make
+clear
+make
+make
+make
+make
+make
+make
+clear
+.cd src/
+cd src/
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+clear
+make
+clear
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+clear
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p 
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+clear
+make
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+clear
+make
+clear
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+make
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make clean
+clear
+make
+./parser ../test/basic_cases/test_cases/3_function.p --dump-ast
+make clean
+exit
+cd src/
+make
+./parser ../test/basic_cases/test_cases/1_program.p dump-ast
+./parser ../test/basic_cases/test_cases/1_program.p --dump-ast
+./parser ../test/basic_cases/test_cases/2_declaration.p --dump-ast
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+make test
+cd 
+ls
+make test/
+make test
+cd src/
+./parser ../test/basic_cases/test_cases/2_declaration.p  --dump-ast
+make
+../
+make test
+cd ../
+make test
+make clean
+clar
+clear
+make clean
+clear
+cd src/
+make
+make
+clear
+gdb parser
+make clean
+make
+gdb parser
+make
+gdb 
+make
+make
+gdb parser
+make
+gdb parser
+make
+gdb parser
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+make
+make
+./parser test.p --dump-ast
+make
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+make
+make
+make
+make
+./parser test.p --dump-ast
+gdb parser
+make
+gdb parser
+make
+make
+gdb parser
+make
+./parser test.p --dump-ast
+gdb parser
+./parser ../test/basic_cases/test_cases/5_PrintBinUnConstantInvocation.p --dump-ast
+gdb parser
+make
+./parser ../test/basic_cases/test_cases/5_PrintBinUnConstantInvocation.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+make
+./parser ../test/basic_cases/test_cases/3_function.p  --dump-ast
+gdb parser
+make
+gdb parser
+make
+gdb parser
+make
+clean
+make clean
+clear
+make
+gdb parser
+make
+make
+make
+make
+gdb parser
+make
+clear
+./parser test.p --dump-ast
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+gdb parser
+make
+gdb parser
+make
+make
+gdb parser
+make
+make
+./parser test.p 
+make
+./parser test.p 
+make
+./parser test.p 
+gdb parser
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+gdb parser 
+./parser test.p --dump-ast
+make
+make
+./parser test.p --dump-ast
+make
+./parser test.p --dump-ast
+make
+make
+./parser test.p --dump-ast
+cd ../
+make test
+clear
+make
+make
+make
+make
+make
+make
+make
+clear
+ls
+cd src/
+gdb parser
+clear
+make
+make test
+make
+make test
+make
+make test
+make
+make test
+clea
+clear
+make 
+make test
+make
+make test
+make
+make test
+cd src/
+ls
+./parser ../test/basic_cases/test_cases/7_if.p --dumpast
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+make
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+cd ../
+make test
+make
+make test
+make
+make test
+exit
+cd src/
+./parser ../test/basic_cases/test_cases/7_if.p --dump-ast
+exit
+make 
+make test
+exit
+make
+make test
+make
+make test
+make clean
+make
+make
+make test
+make clean
+clear
+exit
+make
+make
+lcear
+clear
+make clean
+clear
+make
+make test
+clear
+exit
+make clean
+clear
+make
+clear
+make clean
+make
+make test
+make clean
+exit
+make
+make
+make
+make
+make test
+make
+make
+make
+make
+make test
+clear
+make
+make
+make clean
+clear
+make
+make test
+make
+make
+make test
+make
+make test
+clear
+make clean
+clear
+make
+make
+make test
+clear
+make clean
+clear
+make
+make
+clear
+make clean
+clear
+make
+make tes
+make test
+make clean
+exit
+make
+src/parser test/basic_cases/test_cases/4_compound.p 
+src/parser test/basic_cases/test_cases/4_compound.p --dump-ast
+make test
+make clean
+exit

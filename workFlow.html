@@ -1,0 +1,593 @@
+<!DOCTYPE html><html><head>
+      <title>workFlow</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/luozhongrui/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.2/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="751px" preserveAspectRatio="none" style="width:3770px;height:751px;background:#FFFFFF;" version="1.1" viewBox="0 0 3770 751" width="3770px" zoomAndPan="magnify"><defs><filter height="300%" id="f1ung363ohq1b9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[42c6716c912b6645a6f27bfb02ccc61c]
+cluster statementNode--><polygon fill="#DDDDDD" filter="url(#f1ung363ohq1b9)" points="1383,183,1499,183,1506,205.4883,3753,205.4883,3753,412,1383,412,1383,183" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1383" x2="1506" y1="205.4883" y2="205.4883"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="110" x="1387" y="198.5352">statementNode</text><!--MD5=[2dd50fdf6cdca3f918789c5e123fcaf1]
+class statementNode.CompoundStatementNode--><rect codeline="68" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="151.6406" id="statementNode.CompoundStatementNode" style="stroke:#A80036;stroke-width:1.5;" width="264" x="1399" y="231"/><ellipse cx="1451.25" cy="247" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1453.7231,253.1431 Q1453.1421,253.4419 1452.5029,253.5913 Q1451.8638,253.7407 1451.1582,253.7407 Q1448.6514,253.7407 1447.3315,252.0889 Q1446.0117,250.437 1446.0117,247.3159 Q1446.0117,244.1865 1447.3315,242.5347 Q1448.6514,240.8828 1451.1582,240.8828 Q1451.8638,240.8828 1452.5112,241.0322 Q1453.1587,241.1816 1453.7231,241.4805 L1453.7231,244.2031 Q1453.0923,243.6221 1452.4988,243.3523 Q1451.9053,243.0825 1451.2744,243.0825 Q1449.9297,243.0825 1449.2449,244.1492 Q1448.5601,245.2158 1448.5601,247.3159 Q1448.5601,249.4077 1449.2449,250.4744 Q1449.9297,251.541 1451.2744,251.541 Q1451.9053,251.541 1452.4988,251.2712 Q1453.0923,251.0015 1453.7231,250.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="1471.75" y="251.5352">CompoundStatementNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1400" x2="1662" y1="263" y2="263"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1407" y="271"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="164" x="1419" y="277.6348">*localVariable: class *declNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1407" y="283.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="238" x="1419" y="290.5898">*statements:class *statementNode : AstNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1407" y="296.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1419" y="303.5449">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1400" x2="1662" y1="309.8652" y2="309.8652"/><ellipse cx="1410" cy="320.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="1419" y="324.5">setNext(): set next class</text><ellipse cx="1410" cy="333.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="1419" y="337.4551">getSelf(): return *this</text><ellipse cx="1410" cy="346.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="185" x="1419" y="350.4102">getLocation(): keyword &quot;begin&quot; line</text><ellipse cx="1410" cy="359.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="1419" y="363.3652">accept()</text><ellipse cx="1410" cy="372.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1419" y="376.3203">visitChild(&amp; p_visitor)</text><!--MD5=[5593b58d4954a938e7c3c522197a2a16]
+class statementNode.AssignmentNode--><rect codeline="79" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="138.6855" id="statementNode.AssignmentNode" style="stroke:#A80036;stroke-width:1.5;" width="216" x="1698" y="237.5"/><ellipse cx="1753.25" cy="253.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1755.7231,259.6431 Q1755.1421,259.9419 1754.5029,260.0913 Q1753.8638,260.2407 1753.1582,260.2407 Q1750.6514,260.2407 1749.3315,258.5889 Q1748.0117,256.937 1748.0117,253.8159 Q1748.0117,250.6865 1749.3315,249.0347 Q1750.6514,247.3828 1753.1582,247.3828 Q1753.8638,247.3828 1754.5112,247.5322 Q1755.1587,247.6816 1755.7231,247.9805 L1755.7231,250.7031 Q1755.0923,250.1221 1754.4988,249.8523 Q1753.9053,249.5825 1753.2744,249.5825 Q1751.9297,249.5825 1751.2449,250.6492 Q1750.5601,251.7158 1750.5601,253.8159 Q1750.5601,255.9077 1751.2449,256.9744 Q1751.9297,258.041 1753.2744,258.041 Q1753.9053,258.041 1754.4988,257.7712 Q1755.0923,257.5015 1755.7231,256.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="97" x="1773.75" y="258.0352">AssignmentNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1699" x2="1913" y1="269.5" y2="269.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1706" y="277.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="190" x="1718" y="284.1348">lvalue: class variableReferenceNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1706" y="290.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="184" x="1718" y="297.0898">expression: class expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1706" y="303.4102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1718" y="310.0449">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1699" x2="1913" y1="316.3652" y2="316.3652"/><ellipse cx="1709" cy="327.3652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="1718" y="331">setNext(): set next class</text><ellipse cx="1709" cy="340.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="1718" y="343.9551">getSelf(): return *this</text><ellipse cx="1709" cy="353.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="1718" y="356.9102">accept()</text><ellipse cx="1709" cy="366.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1718" y="369.8652">visitChild(&amp; p_visitor)</text><!--MD5=[8e91d09119ea3c47a45532349f21979d]
+class statementNode.PrintNode--><rect codeline="89" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="138.6855" id="statementNode.PrintNode" style="stroke:#A80036;stroke-width:1.5;" width="187" x="1949.5" y="237.5"/><ellipse cx="2010.25" cy="253.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M2012.7231,259.6431 Q2012.1421,259.9419 2011.5029,260.0913 Q2010.8638,260.2407 2010.1582,260.2407 Q2007.6514,260.2407 2006.3315,258.5889 Q2005.0117,256.937 2005.0117,253.8159 Q2005.0117,250.6865 2006.3315,249.0347 Q2007.6514,247.3828 2010.1582,247.3828 Q2010.8638,247.3828 2011.5112,247.5322 Q2012.1587,247.6816 2012.7231,247.9805 L2012.7231,250.7031 Q2012.0923,250.1221 2011.4988,249.8523 Q2010.9053,249.5825 2010.2744,249.5825 Q2008.9297,249.5825 2008.2449,250.6492 Q2007.5601,251.7158 2007.5601,253.8159 Q2007.5601,255.9077 2008.2449,256.9744 Q2008.9297,258.041 2010.2744,258.041 Q2010.9053,258.041 2011.4988,257.7712 Q2012.0923,257.5015 2012.7231,256.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="57" x="2030.75" y="258.0352">PrintNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1950.5" x2="2135.5" y1="269.5" y2="269.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1957.5" y="277.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="161" x="1969.5" y="284.1348">target: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1957.5" y="290.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1969.5" y="297.0898">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1950.5" x2="2135.5" y1="303.4102" y2="303.4102"/><ellipse cx="1960.5" cy="314.4102" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="159" x="1969.5" y="318.0449">getLocation(): keyword &quot;print&quot;</text><ellipse cx="1960.5" cy="327.3652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="1969.5" y="331">setNext(): set next class</text><ellipse cx="1960.5" cy="340.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="1969.5" y="343.9551">getSelf(): return *this</text><ellipse cx="1960.5" cy="353.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="1969.5" y="356.9102">accept()</text><ellipse cx="1960.5" cy="366.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1969.5" y="369.8652">visitChild(&amp; p_visitor)</text><!--MD5=[95a4060d2c67aedc0eb15e0de8da66d4]
+class statementNode.ReadNode--><rect codeline="99" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="138.6855" id="statementNode.ReadNode" style="stroke:#A80036;stroke-width:1.5;" width="217" x="2171.5" y="237.5"/><ellipse cx="2245.25" cy="253.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M2247.7231,259.6431 Q2247.1421,259.9419 2246.5029,260.0913 Q2245.8638,260.2407 2245.1582,260.2407 Q2242.6514,260.2407 2241.3315,258.5889 Q2240.0117,256.937 2240.0117,253.8159 Q2240.0117,250.6865 2241.3315,249.0347 Q2242.6514,247.3828 2245.1582,247.3828 Q2245.8638,247.3828 2246.5112,247.5322 Q2247.1587,247.6816 2247.7231,247.9805 L2247.7231,250.7031 Q2247.0923,250.1221 2246.4988,249.8523 Q2245.9053,249.5825 2245.2744,249.5825 Q2243.9297,249.5825 2243.2449,250.6492 Q2242.5601,251.7158 2242.5601,253.8159 Q2242.5601,255.9077 2243.2449,256.9744 Q2243.9297,258.041 2245.2744,258.041 Q2245.9053,258.041 2246.4988,257.7712 Q2247.0923,257.5015 2247.7231,256.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="2265.75" y="258.0352">ReadNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2172.5" x2="2387.5" y1="269.5" y2="269.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2179.5" y="277.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="191" x="2191.5" y="284.1348">target: class variableReferenceNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2179.5" y="290.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="2191.5" y="297.0898">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2172.5" x2="2387.5" y1="303.4102" y2="303.4102"/><ellipse cx="2182.5" cy="314.4102" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="2191.5" y="318.0449">setNext(): set next class</text><ellipse cx="2182.5" cy="327.3652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="2191.5" y="331">getSelf(): return *this</text><ellipse cx="2182.5" cy="340.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="179" x="2191.5" y="343.9551">getLocation(): keyword &quot;read&quot; line</text><ellipse cx="2182.5" cy="353.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="2191.5" y="356.9102">accept()</text><ellipse cx="2182.5" cy="366.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="2191.5" y="369.8652">visitChild(&amp; p_visitor)</text><!--MD5=[91e77139870deeac8ac53efdbaab0bdd]
+class statementNode.IfNode--><rect codeline="109" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="164.5957" id="statementNode.IfNode" style="stroke:#A80036;stroke-width:1.5;" width="267" x="2423.5" y="224.5"/><ellipse cx="2533.75" cy="240.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M2536.2231,246.6431 Q2535.6421,246.9419 2535.0029,247.0913 Q2534.3638,247.2407 2533.6582,247.2407 Q2531.1514,247.2407 2529.8315,245.5889 Q2528.5117,243.937 2528.5117,240.8159 Q2528.5117,237.6865 2529.8315,236.0347 Q2531.1514,234.3828 2533.6582,234.3828 Q2534.3638,234.3828 2535.0112,234.5322 Q2535.6587,234.6816 2536.2231,234.9805 L2536.2231,237.7031 Q2535.5923,237.1221 2534.9988,236.8523 Q2534.4053,236.5825 2533.7744,236.5825 Q2532.4297,236.5825 2531.7449,237.6492 Q2531.0601,238.7158 2531.0601,240.8159 Q2531.0601,242.9077 2531.7449,243.9744 Q2532.4297,245.041 2533.7744,245.041 Q2534.4053,245.041 2534.9988,244.7712 Q2535.5923,244.5015 2536.2231,243.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38" x="2554.25" y="245.0352">IfNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2424.5" x2="2689.5" y1="256.5" y2="256.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2431.5" y="264.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="2443.5" y="271.1348">condition: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2431.5" y="277.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="207" x="2443.5" y="284.0898">body: class *compoundStatementNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2431.5" y="290.4102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="241" x="2443.5" y="297.0449">bodyOfelse: class *compoundStatementNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2431.5" y="303.3652"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="2443.5" y="310">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2424.5" x2="2689.5" y1="316.3203" y2="316.3203"/><ellipse cx="2434.5" cy="327.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="2443.5" y="330.9551">setNext(): set next class</text><ellipse cx="2434.5" cy="340.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="2443.5" y="343.9102">getSelf(): return *this</text><ellipse cx="2434.5" cy="353.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="162" x="2443.5" y="356.8652">getLocation(): keyword &quot;if&quot; line</text><ellipse cx="2434.5" cy="366.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="2443.5" y="369.8203">accept()</text><ellipse cx="2434.5" cy="379.1406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="2443.5" y="382.7754">visitChild(&amp; p_visitor)</text><!--MD5=[b920179143873462681da3a5e849e85a]
+class statementNode.WhileNode--><rect codeline="120" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="151.6406" id="statementNode.WhileNode" style="stroke:#A80036;stroke-width:1.5;" width="233" x="2725.5" y="231"/><ellipse cx="2807.25" cy="247" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M2809.7231,253.1431 Q2809.1421,253.4419 2808.5029,253.5913 Q2807.8638,253.7407 2807.1582,253.7407 Q2804.6514,253.7407 2803.3315,252.0889 Q2802.0117,250.437 2802.0117,247.3159 Q2802.0117,244.1865 2803.3315,242.5347 Q2804.6514,240.8828 2807.1582,240.8828 Q2807.8638,240.8828 2808.5112,241.0322 Q2809.1587,241.1816 2809.7231,241.4805 L2809.7231,244.2031 Q2809.0923,243.6221 2808.4988,243.3523 Q2807.9053,243.0825 2807.2744,243.0825 Q2805.9297,243.0825 2805.2449,244.1492 Q2804.5601,245.2158 2804.5601,247.3159 Q2804.5601,249.4077 2805.2449,250.4744 Q2805.9297,251.541 2807.2744,251.541 Q2807.9053,251.541 2808.4988,251.2712 Q2809.0923,251.0015 2809.7231,250.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="2827.75" y="251.5352">WhileNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2726.5" x2="2957.5" y1="263" y2="263"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2733.5" y="271"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="2745.5" y="277.6348">condition: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2733.5" y="283.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="207" x="2745.5" y="290.5898">body: class *compoundStatementNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2733.5" y="296.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="2745.5" y="303.5449">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2726.5" x2="2957.5" y1="309.8652" y2="309.8652"/><ellipse cx="2736.5" cy="320.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="2745.5" y="324.5">setNext(): set next class</text><ellipse cx="2736.5" cy="333.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="2745.5" y="337.4551">getSelf(): return *this</text><ellipse cx="2736.5" cy="346.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="160" x="2745.5" y="350.4102">getLocation(): keyword &quot;while&quot;</text><ellipse cx="2736.5" cy="359.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="2745.5" y="363.3652">accept()</text><ellipse cx="2736.5" cy="372.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="2745.5" y="376.3203">visitChild(&amp; p_visitor)</text><!--MD5=[9ca8c34bb2cbedf31944f14744f5c843]
+class statementNode.ForNode--><rect codeline="131" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="177.5508" id="statementNode.ForNode" style="stroke:#A80036;stroke-width:1.5;" width="239" x="2993.5" y="218"/><ellipse cx="3084.25" cy="234" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M3086.7231,240.1431 Q3086.1421,240.4419 3085.5029,240.5913 Q3084.8638,240.7407 3084.1582,240.7407 Q3081.6514,240.7407 3080.3315,239.0889 Q3079.0117,237.437 3079.0117,234.3159 Q3079.0117,231.1865 3080.3315,229.5347 Q3081.6514,227.8828 3084.1582,227.8828 Q3084.8638,227.8828 3085.5112,228.0322 Q3086.1587,228.1816 3086.7231,228.4805 L3086.7231,231.2031 Q3086.0923,230.6221 3085.4988,230.3523 Q3084.9053,230.0825 3084.2744,230.0825 Q3082.9297,230.0825 3082.2449,231.1492 Q3081.5601,232.2158 3081.5601,234.3159 Q3081.5601,236.4077 3082.2449,237.4744 Q3082.9297,238.541 3084.2744,238.541 Q3084.9053,238.541 3085.4988,238.2712 Q3086.0923,238.0015 3086.7231,237.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49" x="3104.75" y="238.5352">ForNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2994.5" x2="3231.5" y1="250" y2="250"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3001.5" y="258"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="3013.5" y="264.6348">loopVariableDecl: class *declNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3001.5" y="270.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="3013.5" y="277.5898">initialStatement: class *assignmentNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3001.5" y="283.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="3013.5" y="290.5449">condition: class *constantValueNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3001.5" y="296.8652"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="3013.5" y="303.5">body: class *compoundStateNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3001.5" y="309.8203"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="3013.5" y="316.4551">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="2994.5" x2="3231.5" y1="322.7754" y2="322.7754"/><ellipse cx="3004.5" cy="333.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="3013.5" y="337.4102">setNext(): set next class</text><ellipse cx="3004.5" cy="346.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="3013.5" y="350.3652">getSelf(): return *this</text><ellipse cx="3004.5" cy="359.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="3013.5" y="363.3203">getLocation(): keyword &quot;for&quot;</text><ellipse cx="3004.5" cy="372.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="3013.5" y="376.2754">accept()</text><ellipse cx="3004.5" cy="385.5957" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="3013.5" y="389.2305">visitChild(&amp; p_visitor)</text><!--MD5=[691b335f5bc4d30539d60679c1349e1d]
+class statementNode.ReturnNode--><rect codeline="144" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="138.6855" id="statementNode.ReturnNode" style="stroke:#A80036;stroke-width:1.5;" width="218" x="3268" y="237.5"/><ellipse cx="3338.25" cy="253.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M3340.7231,259.6431 Q3340.1421,259.9419 3339.5029,260.0913 Q3338.8638,260.2407 3338.1582,260.2407 Q3335.6514,260.2407 3334.3315,258.5889 Q3333.0117,256.937 3333.0117,253.8159 Q3333.0117,250.6865 3334.3315,249.0347 Q3335.6514,247.3828 3338.1582,247.3828 Q3338.8638,247.3828 3339.5112,247.5322 Q3340.1587,247.6816 3340.7231,247.9805 L3340.7231,250.7031 Q3340.0923,250.1221 3339.4988,249.8523 Q3338.9053,249.5825 3338.2744,249.5825 Q3336.9297,249.5825 3336.2449,250.6492 Q3335.5601,251.7158 3335.5601,253.8159 Q3335.5601,255.9077 3336.2449,256.9744 Q3336.9297,258.041 3338.2744,258.041 Q3338.9053,258.041 3339.4988,257.7712 Q3340.0923,257.5015 3340.7231,256.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="3358.75" y="258.0352">ReturnNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3269" x2="3485" y1="269.5" y2="269.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3276" y="277.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="3288" y="284.1348">returnValue: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3276" y="290.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="3288" y="297.0898">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3269" x2="3485" y1="303.4102" y2="303.4102"/><ellipse cx="3279" cy="314.4102" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="3288" y="318.0449">setNext(): set next class</text><ellipse cx="3279" cy="327.3652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="3288" y="331">getSelf(): return *this</text><ellipse cx="3279" cy="340.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="167" x="3288" y="343.9551">getLocation(): keyword &quot;return&quot;</text><ellipse cx="3279" cy="353.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="3288" y="356.9102">accept()</text><ellipse cx="3279" cy="366.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="3288" y="369.8652">visitChild(&amp; p_visitor)</text><!--MD5=[0b4cc37358f3e8c19837dce5a6d15488]
+class statementNode.FunctionInvocationNode--><rect codeline="153" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="151.6406" id="statementNode.FunctionInvocationNode" style="stroke:#A80036;stroke-width:1.5;" width="215" x="3521.5" y="231"/><ellipse cx="3558.1" cy="247" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M3560.5731,253.1431 Q3559.9921,253.4419 3559.3529,253.5913 Q3558.7138,253.7407 3558.0082,253.7407 Q3555.5014,253.7407 3554.1815,252.0889 Q3552.8617,250.437 3552.8617,247.3159 Q3552.8617,244.1865 3554.1815,242.5347 Q3555.5014,240.8828 3558.0082,240.8828 Q3558.7138,240.8828 3559.3612,241.0322 Q3560.0087,241.1816 3560.5731,241.4805 L3560.5731,244.2031 Q3559.9423,243.6221 3559.3488,243.3523 Q3558.7553,243.0825 3558.1244,243.0825 Q3556.7797,243.0825 3556.0949,244.1492 Q3555.4101,245.2158 3555.4101,247.3159 Q3555.4101,249.4077 3556.0949,250.4744 Q3556.7797,251.541 3558.1244,251.541 Q3558.7553,251.541 3559.3488,251.2712 Q3559.9423,251.0015 3560.5731,250.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="135" x="3576.9" y="251.5352">FunctionInvocationNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3522.5" x2="3735.5" y1="263" y2="263"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3529.5" y="271"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="3541.5" y="277.6348">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3529.5" y="283.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="189" x="3541.5" y="290.5898">Arguments: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="3529.5" y="296.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="3541.5" y="303.5449">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="3522.5" x2="3735.5" y1="309.8652" y2="309.8652"/><ellipse cx="3532.5" cy="320.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="3541.5" y="324.5">setNext(): set next class</text><ellipse cx="3532.5" cy="333.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="3541.5" y="337.4551">getSelf(): return *this</text><ellipse cx="3532.5" cy="346.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="3541.5" y="350.4102">getName()</text><ellipse cx="3532.5" cy="359.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="3541.5" y="363.3652">accept()</text><ellipse cx="3532.5" cy="372.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="3541.5" y="376.3203">visitChild(&amp; p_visitor)</text><!--MD5=[e992598c1f32d94295a003723a9ea035]
+class AstNode--><rect codeline="3" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="112.7754" id="AstNode" style="stroke:#A80036;stroke-width:1.5;" width="142" x="1538" y="7"/><ellipse cx="1580.45" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1576.8777,19.2651 L1576.8777,17.1069 L1584.2571,17.1069 L1584.2571,19.2651 L1581.7918,19.2651 L1581.7918,27.3418 L1584.2571,27.3418 L1584.2571,29.5 L1576.8777,29.5 L1576.8777,27.3418 L1579.3431,27.3418 L1579.3431,19.2651 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="49" x="1600.55" y="27.5352">AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1539" x2="1679" y1="39" y2="39"/><polygon fill="none" points="1549,45,1553,49,1549,53,1545,49" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="46" x="1558" y="53.6348">Location</text><polygon fill="none" points="1549,57.9551,1553,61.9551,1549,65.9551,1545,61.9551" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="1558" y="66.5898">typeSet</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1539" x2="1679" y1="72.9102" y2="72.9102"/><ellipse cx="1549" cy="83.9102" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="1558" y="87.5449">getLocation()</text><ellipse cx="1549" cy="96.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="91" x="1558" y="100.5">accept() override</text><ellipse cx="1549" cy="109.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1558" y="113.4551">visitChild(&amp; p_visitor)</text><!--MD5=[9de30ba59fdac94b741f70ff6bc98736]
+class programNode--><rect codeline="11" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="203.4609" id="programNode" style="stroke:#A80036;stroke-width:1.5;" width="224" x="7" y="205.5"/><ellipse cx="74.25" cy="221.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M76.7231,227.6431 Q76.1421,227.9419 75.5029,228.0913 Q74.8638,228.2407 74.1582,228.2407 Q71.6514,228.2407 70.3315,226.5889 Q69.0117,224.937 69.0117,221.8159 Q69.0117,218.6865 70.3315,217.0347 Q71.6514,215.3828 74.1582,215.3828 Q74.8638,215.3828 75.5112,215.5322 Q76.1587,215.6816 76.7231,215.9805 L76.7231,218.7031 Q76.0923,218.1221 75.4988,217.8523 Q74.9053,217.5825 74.2744,217.5825 Q72.9297,217.5825 72.2449,218.6492 Q71.5601,219.7158 71.5601,221.8159 Q71.5601,223.9077 72.2449,224.9744 Q72.9297,226.041 74.2744,226.041 Q74.9053,226.041 75.4988,225.7712 Q76.0923,225.5015 76.7231,224.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="81" x="94.75" y="226.0352">programNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="230" y1="237.5" y2="237.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="245.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="27" y="252.1348">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="258.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="27" y="265.0898">returnType: void</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="271.4102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="27" y="278.0449">*declNode: class</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="284.3652"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="27" y="291">*funcNode: class</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="297.3203"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="27" y="303.9551">*comStat: class</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="310.2754"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="27" y="316.9102">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="230" y1="323.2305" y2="323.2305"/><ellipse cx="18" cy="334.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="27" y="337.8652">setNext(): set next class</text><ellipse cx="18" cy="347.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="27" y="350.8203">getSelf(): return *this</text><ellipse cx="18" cy="360.1406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="198" x="27" y="363.7754">getLocation(): the program name line</text><ellipse cx="18" cy="373.0957" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="27" y="376.7305">getName()</text><ellipse cx="18" cy="386.0508" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="27" y="389.6855">accept()</text><ellipse cx="18" cy="399.0059" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="27" y="402.6406">visitChild(&amp; p_visitor)</text><!--MD5=[09524d3e74f5c8abd1b7002f3a9b907c]
+class DeclNode--><rect codeline="26" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="138.6855" id="DeclNode" style="stroke:#A80036;stroke-width:1.5;" width="213" x="266.5" y="237.5"/><ellipse cx="340.75" cy="253.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M343.2231,259.6431 Q342.6421,259.9419 342.0029,260.0913 Q341.3638,260.2407 340.6582,260.2407 Q338.1514,260.2407 336.8315,258.5889 Q335.5117,256.937 335.5117,253.8159 Q335.5117,250.6865 336.8315,249.0347 Q338.1514,247.3828 340.6582,247.3828 Q341.3638,247.3828 342.0112,247.5322 Q342.6587,247.6816 343.2231,247.9805 L343.2231,250.7031 Q342.5923,250.1221 341.9988,249.8523 Q341.4053,249.5825 340.7744,249.5825 Q339.4297,249.5825 338.7449,250.6492 Q338.0601,251.7158 338.0601,253.8159 Q338.0601,255.9077 338.7449,256.9744 Q339.4297,258.041 340.7744,258.041 Q341.4053,258.041 341.9988,257.7712 Q342.5923,257.5015 343.2231,256.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56" x="361.25" y="258.0352">DeclNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="267.5" x2="478.5" y1="269.5" y2="269.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="274.5" y="277.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="187" x="286.5" y="284.1348">*VariableNode: class *variableNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="274.5" y="290.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="286.5" y="297.0898">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="267.5" x2="478.5" y1="303.4102" y2="303.4102"/><ellipse cx="277.5" cy="314.4102" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="286.5" y="318.0449">setNext(): set next class</text><ellipse cx="277.5" cy="327.3652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="286.5" y="331">getSelf(): return *this</text><ellipse cx="277.5" cy="340.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="148" x="286.5" y="343.9551">getLocation(): keyword &apos;var&apos;</text><ellipse cx="277.5" cy="353.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="286.5" y="356.9102">accept()</text><ellipse cx="277.5" cy="366.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="286.5" y="369.8652">visitChild(&amp; p_visitor)</text><!--MD5=[7dabbced44a5369241d129f1da30755c]
+class VariableNode--><rect codeline="36" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="190.5059" id="VariableNode" style="stroke:#A80036;stroke-width:1.5;" width="219" x="514.5" y="211.5"/><ellipse cx="580.25" cy="227.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M582.7231,233.6431 Q582.1421,233.9419 581.5029,234.0913 Q580.8638,234.2407 580.1582,234.2407 Q577.6514,234.2407 576.3315,232.5889 Q575.0117,230.937 575.0117,227.8159 Q575.0117,224.6865 576.3315,223.0347 Q577.6514,221.3828 580.1582,221.3828 Q580.8638,221.3828 581.5112,221.5322 Q582.1587,221.6816 582.7231,221.9805 L582.7231,224.7031 Q582.0923,224.1221 581.4988,223.8523 Q580.9053,223.5825 580.2744,223.5825 Q578.9297,223.5825 578.2449,224.6492 Q577.5601,225.7158 577.5601,227.8159 Q577.5601,229.9077 578.2449,230.9744 Q578.9297,232.041 580.2744,232.041 Q580.9053,232.041 581.4988,231.7712 Q582.0923,231.5015 582.7231,230.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="79" x="600.75" y="232.0352">VariableNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="515.5" x2="732.5" y1="243.5" y2="243.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="522.5" y="251.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="534.5" y="258.1348">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="522.5" y="264.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="534.5" y="271.0898">type: typeSet</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="522.5" y="277.4102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="534.5" y="284.0449">*constantValueNode: class</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="522.5" y="290.3652"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="534.5" y="297">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="515.5" x2="732.5" y1="303.3203" y2="303.3203"/><ellipse cx="525.5" cy="314.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="534.5" y="317.9551">setNext(): set next class</text><ellipse cx="525.5" cy="327.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="534.5" y="330.9102">getSelf(): return *this</text><ellipse cx="525.5" cy="340.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="193" x="534.5" y="343.8652">getLocation(): the variable name line</text><ellipse cx="525.5" cy="353.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="534.5" y="356.8203">getName()</text><ellipse cx="525.5" cy="366.1406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="51" x="534.5" y="369.7754">getType()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="534.5" y="382.7305">accept()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="534.5" y="395.6855">visitChild(&amp; p_visitor)</text><!--MD5=[9bdf41229b5c26f95cef71b838e98f74]
+class FunctionNode--><rect codeline="52" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="203.4609" id="FunctionNode" style="stroke:#A80036;stroke-width:1.5;" width="235" x="768.5" y="205.5"/><ellipse cx="842.75" cy="221.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M845.2231,227.6431 Q844.6421,227.9419 844.0029,228.0913 Q843.3638,228.2407 842.6582,228.2407 Q840.1514,228.2407 838.8315,226.5889 Q837.5117,224.937 837.5117,221.8159 Q837.5117,218.6865 838.8315,217.0347 Q840.1514,215.3828 842.6582,215.3828 Q843.3638,215.3828 844.0112,215.5322 Q844.6587,215.6816 845.2231,215.9805 L845.2231,218.7031 Q844.5923,218.1221 843.9988,217.8523 Q843.4053,217.5825 842.7744,217.5825 Q841.4297,217.5825 840.7449,218.6492 Q840.0601,219.7158 840.0601,221.8159 Q840.0601,223.9077 840.7449,224.9744 Q841.4297,226.041 842.7744,226.041 Q843.4053,226.041 843.9988,225.7712 Q844.5923,225.5015 845.2231,224.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78" x="863.25" y="226.0352">FunctionNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="769.5" x2="1002.5" y1="237.5" y2="237.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="776.5" y="245.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="788.5" y="252.1348">name</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="776.5" y="258.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="153" x="788.5" y="265.0898">parameters: class *DeclNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="776.5" y="271.4102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="788.5" y="278.0449">returnType: typeSet</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="776.5" y="284.3652"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="209" x="788.5" y="291">body: class *CompoundStatementNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="776.5" y="297.3203"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="788.5" y="303.9551">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="769.5" x2="1002.5" y1="310.2754" y2="310.2754"/><ellipse cx="779.5" cy="321.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="788.5" y="324.9102">setNext(): set next class</text><ellipse cx="779.5" cy="334.2305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="788.5" y="337.8652">getSelf(): return *this</text><ellipse cx="779.5" cy="347.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="788.5" y="350.8203">getLocation(): the function name line</text><ellipse cx="779.5" cy="360.1406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="788.5" y="363.7754">getName()</text><ellipse cx="779.5" cy="373.0957" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="788.5" y="376.7305">getReturnType()</text><ellipse cx="779.5" cy="386.0508" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="788.5" y="389.6855">accept()</text><ellipse cx="779.5" cy="399.0059" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="788.5" y="402.6406">visitChild(&amp; p_visitor)</text><!--MD5=[c96ad03c2b6fc8865d462d66e7204511]
+class ExpressionNode--><rect codeline="166" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="73.9102" id="ExpressionNode" style="stroke:#A80036;stroke-width:1.5;" width="142" x="1039" y="270"/><ellipse cx="1061.2" cy="286" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1063.6731,292.1431 Q1063.0921,292.4419 1062.4529,292.5913 Q1061.8138,292.7407 1061.1082,292.7407 Q1058.6014,292.7407 1057.2815,291.0889 Q1055.9617,289.437 1055.9617,286.3159 Q1055.9617,283.1865 1057.2815,281.5347 Q1058.6014,279.8828 1061.1082,279.8828 Q1061.8138,279.8828 1062.4612,280.0322 Q1063.1087,280.1816 1063.6731,280.4805 L1063.6731,283.2031 Q1063.0423,282.6221 1062.4488,282.3523 Q1061.8553,282.0825 1061.2244,282.0825 Q1059.8797,282.0825 1059.1949,283.1492 Q1058.5101,284.2158 1058.5101,286.3159 Q1058.5101,288.4077 1059.1949,289.4744 Q1059.8797,290.541 1061.2244,290.541 Q1061.8553,290.541 1062.4488,290.2712 Q1063.0423,290.0015 1063.6731,289.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="94" x="1076.8" y="290.5352">ExpressionNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1040" x2="1180" y1="302" y2="302"/><line style="stroke:#A80036;stroke-width:1.5;" x1="1040" x2="1180" y1="310" y2="310"/><ellipse cx="1050" cy="321" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="1059" y="324.6348">accept()</text><ellipse cx="1050" cy="333.9551" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1059" y="337.5898">visitChild(&amp; p_visitor)</text><!--MD5=[1885f96c3ba235eb556b47979806fc50]
+class BinaryOperatorNode--><rect codeline="171" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="164.5957" id="BinaryOperatorNode" style="stroke:#A80036;stroke-width:1.5;" width="228" x="372" y="521"/><ellipse cx="422.75" cy="537" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M425.2231,543.1431 Q424.6421,543.4419 424.0029,543.5913 Q423.3638,543.7407 422.6582,543.7407 Q420.1514,543.7407 418.8315,542.0889 Q417.5117,540.437 417.5117,537.3159 Q417.5117,534.1865 418.8315,532.5347 Q420.1514,530.8828 422.6582,530.8828 Q423.3638,530.8828 424.0112,531.0322 Q424.6587,531.1816 425.2231,531.4805 L425.2231,534.2031 Q424.5923,533.6221 423.9988,533.3523 Q423.4053,533.0825 422.7744,533.0825 Q421.4297,533.0825 420.7449,534.1492 Q420.0601,535.2158 420.0601,537.3159 Q420.0601,539.4077 420.7449,540.4744 Q421.4297,541.541 422.7744,541.541 Q423.4053,541.541 423.9988,541.2712 Q424.5923,541.0015 425.2231,540.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="118" x="443.25" y="541.5352">BinaryOperatorNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="373" x2="599" y1="553" y2="553"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="380" y="561"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="392" y="567.6348">operator: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="380" y="573.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="193" x="392" y="580.5898">leftOperand: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="380" y="586.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="202" x="392" y="593.5449">rightOperand: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="380" y="599.8652"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="392" y="606.5">*next: class *ExpressionNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="373" x2="599" y1="612.8203" y2="612.8203"/><ellipse cx="383" cy="623.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="392" y="627.4551">setNext(): set next class</text><ellipse cx="383" cy="636.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="166" x="392" y="640.4102">getLocation(): the operator line</text><ellipse cx="383" cy="649.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="392" y="653.3652">getOperator()</text><ellipse cx="383" cy="662.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="392" y="666.3203">accept()</text><ellipse cx="383" cy="675.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="392" y="679.2754">visitChild(&amp; p_visitor)</text><!--MD5=[1e81b173a154674cc67c3d50712fd4dd]
+class UnaryOperatorNode--><rect codeline="183" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="164.5957" id="UnaryOperatorNode" style="stroke:#A80036;stroke-width:1.5;" width="200" x="635" y="521"/><ellipse cx="673.4" cy="537" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M675.8731,543.1431 Q675.2921,543.4419 674.6529,543.5913 Q674.0138,543.7407 673.3082,543.7407 Q670.8014,543.7407 669.4815,542.0889 Q668.1617,540.437 668.1617,537.3159 Q668.1617,534.1865 669.4815,532.5347 Q670.8014,530.8828 673.3082,530.8828 Q674.0138,530.8828 674.6612,531.0322 Q675.3087,531.1816 675.8731,531.4805 L675.8731,534.2031 Q675.2423,533.6221 674.6488,533.3523 Q674.0553,533.0825 673.4244,533.0825 Q672.0797,533.0825 671.3949,534.1492 Q670.7101,535.2158 670.7101,537.3159 Q670.7101,539.4077 671.3949,540.4744 Q672.0797,541.541 673.4244,541.541 Q674.0553,541.541 674.6488,541.2712 Q675.2423,541.0015 675.8731,540.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="116" x="692.6" y="541.5352">UnaryOperatorNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="636" x2="834" y1="553" y2="553"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="643" y="561"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="655" y="567.6348">operator: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="643" y="573.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="174" x="655" y="580.5898">operand: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="643" y="586.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="655" y="593.5449">*next: class *ExpressionNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="636" x2="834" y1="599.8652" y2="599.8652"/><ellipse cx="646" cy="610.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="655" y="614.5">setNext(): set next class</text><ellipse cx="646" cy="623.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="655" y="627.4551">getSelf(): return *this</text><ellipse cx="646" cy="636.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="166" x="655" y="640.4102">getLocation(): the operator line</text><ellipse cx="646" cy="649.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="655" y="653.3652">getOperator()</text><ellipse cx="646" cy="662.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="655" y="666.3203">accept()</text><ellipse cx="646" cy="675.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="655" y="679.2754">visitChild(&amp; p_visitor)</text><!--MD5=[f53d923cd024cfc0627a3d20b521a76d]
+class VariableReferenceNode--><rect codeline="195" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="164.5957" id="VariableReferenceNode" style="stroke:#A80036;stroke-width:1.5;" width="222" x="870" y="521"/><ellipse cx="908.85" cy="537" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M911.3231,543.1431 Q910.7421,543.4419 910.1029,543.5913 Q909.4638,543.7407 908.7582,543.7407 Q906.2514,543.7407 904.9315,542.0889 Q903.6117,540.437 903.6117,537.3159 Q903.6117,534.1865 904.9315,532.5347 Q906.2514,530.8828 908.7582,530.8828 Q909.4638,530.8828 910.1112,531.0322 Q910.7587,531.1816 911.3231,531.4805 L911.3231,534.2031 Q910.6923,533.6221 910.0988,533.3523 Q909.5053,533.0825 908.8744,533.0825 Q907.5297,533.0825 906.8449,534.1492 Q906.1601,535.2158 906.1601,537.3159 Q906.1601,539.4077 906.8449,540.4744 Q907.5297,541.541 908.8744,541.541 Q909.5053,541.541 910.0988,541.2712 Q910.6923,541.0015 911.3231,540.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="137" x="928.15" y="541.5352">VariableReferenceNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="871" x2="1091" y1="553" y2="553"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="878" y="561"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="890" y="567.6348">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="878" y="573.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="167" x="890" y="580.5898">indices: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="878" y="586.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="890" y="593.5449">*next: class *ExpressionNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="871" x2="1091" y1="599.8652" y2="599.8652"/><ellipse cx="881" cy="610.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="890" y="614.5">setNext(): set next class</text><ellipse cx="881" cy="623.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="890" y="627.4551">getSelf(): return *this</text><ellipse cx="881" cy="636.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="890" y="640.4102">getLocation():  the variable name line</text><ellipse cx="881" cy="649.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="890" y="653.3652">getName()</text><ellipse cx="881" cy="662.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="890" y="666.3203">accept()</text><ellipse cx="881" cy="675.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="890" y="679.2754">visitChild(&amp; p_visitor)</text><!--MD5=[c0cf7013241595098c30d80f4e50f4a6]
+class FunctionInvocationNode--><rect codeline="207" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="164.5957" id="FunctionInvocationNode" style="stroke:#A80036;stroke-width:1.5;" width="222" x="1127" y="521"/><ellipse cx="1166.75" cy="537" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1169.2231,543.1431 Q1168.6421,543.4419 1168.0029,543.5913 Q1167.3638,543.7407 1166.6582,543.7407 Q1164.1514,543.7407 1162.8315,542.0889 Q1161.5117,540.437 1161.5117,537.3159 Q1161.5117,534.1865 1162.8315,532.5347 Q1164.1514,530.8828 1166.6582,530.8828 Q1167.3638,530.8828 1168.0112,531.0322 Q1168.6587,531.1816 1169.2231,531.4805 L1169.2231,534.2031 Q1168.5923,533.6221 1167.9988,533.3523 Q1167.4053,533.0825 1166.7744,533.0825 Q1165.4297,533.0825 1164.7449,534.1492 Q1164.0601,535.2158 1164.0601,537.3159 Q1164.0601,539.4077 1164.7449,540.4744 Q1165.4297,541.541 1166.7744,541.541 Q1167.4053,541.541 1167.9988,541.2712 Q1168.5923,541.0015 1169.2231,540.4204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="135" x="1186.25" y="541.5352">FunctionInvocationNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1128" x2="1348" y1="553" y2="553"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1135" y="561"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="1147" y="567.6348">name: string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1135" y="573.9551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="189" x="1147" y="580.5898">Arguments: class *expressionNode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1135" y="586.9102"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="1147" y="593.5449">*next: class *ExpressionNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1128" x2="1348" y1="599.8652" y2="599.8652"/><ellipse cx="1138" cy="610.8652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="1147" y="614.5">setNext(): set next class</text><ellipse cx="1138" cy="623.8203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="118" x="1147" y="627.4551">getSelf(): return *thiss</text><ellipse cx="1138" cy="636.7754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="1147" y="640.4102">getLocation(): the function name line</text><ellipse cx="1138" cy="649.7305" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="1147" y="653.3652">getName()</text><ellipse cx="1138" cy="662.6855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="1147" y="666.3203">accept()</text><ellipse cx="1138" cy="675.6406" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1147" y="679.2754">visitChild(&amp; p_visitor)</text><!--MD5=[1af07099a370052d1d3449256ab2bb8c]
+class ConstantValueNode--><rect codeline="219" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="125.7305" id="ConstantValueNode" style="stroke:#A80036;stroke-width:1.5;" width="223" x="1384.5" y="540.5"/><ellipse cx="1435.25" cy="556.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1437.7231,562.6431 Q1437.1421,562.9419 1436.5029,563.0913 Q1435.8638,563.2407 1435.1582,563.2407 Q1432.6514,563.2407 1431.3315,561.5889 Q1430.0117,559.937 1430.0117,556.8159 Q1430.0117,553.6865 1431.3315,552.0347 Q1432.6514,550.3828 1435.1582,550.3828 Q1435.8638,550.3828 1436.5112,550.5322 Q1437.1587,550.6816 1437.7231,550.9805 L1437.7231,553.7031 Q1437.0923,553.1221 1436.4988,552.8523 Q1435.9053,552.5825 1435.2744,552.5825 Q1433.9297,552.5825 1433.2449,553.6492 Q1432.5601,554.7158 1432.5601,556.8159 Q1432.5601,558.9077 1433.2449,559.9744 Q1433.9297,561.041 1435.2744,561.041 Q1435.9053,561.041 1436.4988,560.7712 Q1437.0923,560.5015 1437.7231,559.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="113" x="1455.75" y="561.0352">ConstantValueNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1385.5" x2="1606.5" y1="572.5" y2="572.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1392.5" y="580.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="153" x="1404.5" y="587.1348">value: inter, real, bool, string</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1392.5" y="593.4551"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116" x="1404.5" y="600.0898">*next: class *AstNode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1385.5" x2="1606.5" y1="606.4102" y2="606.4102"/><ellipse cx="1395.5" cy="617.4102" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="1404.5" y="621.0449">setNext(): set next class</text><ellipse cx="1395.5" cy="630.3652" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="1404.5" y="634">getSelf(): return *this</text><ellipse cx="1395.5" cy="643.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="197" x="1404.5" y="646.9551">getLocation(): the constant value line</text><ellipse cx="1395.5" cy="656.2754" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="122" x="1404.5" y="659.9102">getValue(type: typeSet)</text><!--MD5=[dae7be610aa38bdeea439f86b361e113]
+class AstNodeVisitor--><rect codeline="234" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="60.9551" id="AstNodeVisitor" style="stroke:#A80036;stroke-width:1.5;" width="147" x="1216.5" y="276.5"/><ellipse cx="1245" cy="292.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1241.4277,288.7651 L1241.4277,286.6069 L1248.8071,286.6069 L1248.8071,288.7651 L1246.3418,288.7651 L1246.3418,296.8418 L1248.8071,296.8418 L1248.8071,299 L1241.4277,299 L1241.4277,296.8418 L1243.8931,296.8418 L1243.8931,288.7651 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="85" x="1262" y="297.0352">AstNodeVisitor</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1217.5" x2="1362.5" y1="308.5" y2="308.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="1217.5" x2="1362.5" y1="316.5" y2="316.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="135" x="1222.5" y="331.1348">visit(&amp; AstNode) override</text><!--MD5=[5544f63d373e052b7d3dd6853dde1c65]
+class AstDumper--><rect codeline="238" fill="#FEFECE" filter="url(#f1ung363ohq1b9)" height="268.2363" id="AstDumper" style="stroke:#A80036;stroke-width:1.5;" width="401" x="1642.5" y="469.5"/><ellipse cx="1806.25" cy="485.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1808.7231,491.6431 Q1808.1421,491.9419 1807.5029,492.0913 Q1806.8638,492.2407 1806.1582,492.2407 Q1803.6514,492.2407 1802.3315,490.5889 Q1801.0117,488.937 1801.0117,485.8159 Q1801.0117,482.6865 1802.3315,481.0347 Q1803.6514,479.3828 1806.1582,479.3828 Q1806.8638,479.3828 1807.5112,479.5322 Q1808.1587,479.6816 1808.7231,479.9805 L1808.7231,482.7031 Q1808.0923,482.1221 1807.4988,481.8523 Q1806.9053,481.5825 1806.2744,481.5825 Q1804.9297,481.5825 1804.2449,482.6492 Q1803.5601,483.7158 1803.5601,485.8159 Q1803.5601,487.9077 1804.2449,488.9744 Q1804.9297,490.041 1806.2744,490.041 Q1806.9053,490.041 1807.4988,489.7712 Q1808.0923,489.5015 1808.7231,488.9204 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65" x="1826.75" y="490.0352">AstDumper</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1643.5" x2="2042.5" y1="501.5" y2="501.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="1643.5" x2="2042.5" y1="509.5" y2="509.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="252" x="1648.5" y="524.1348">void visit(ProgramNode &amp;p_program) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="204" x="1648.5" y="537.0898">void visit(DeclNode &amp;p_decl) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="244" x="1648.5" y="550.0449">void visit(VariableNode &amp;p_variable) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="318" x="1648.5" y="563">void visit(ConstantValueNode &amp;p_constant_value) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="251" x="1648.5" y="575.9551">void visit(FunctionNode &amp;p_function) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="389" x="1648.5" y="588.9102">void visit(CompoundStatementNode &amp;p_compound_statement) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="210" x="1648.5" y="601.8652">void visit(PrintNode &amp;p_print) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="278" x="1648.5" y="614.8203">void visit(BinaryOperatorNode &amp;p_bin_op) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="274" x="1648.5" y="627.7754">void visit(UnaryOperatorNode &amp;p_un_op) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="348" x="1648.5" y="640.7305">void visit(FunctionInvocationNode &amp;p_func_invocation) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="318" x="1648.5" y="653.6855">void visit(VariableReferenceNode &amp;p_variable_ref) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="285" x="1648.5" y="666.6406">void visit(AssignmentNode &amp;p_assignment) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="209" x="1648.5" y="679.5957">void visit(ReadNode &amp;p_read) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="173" x="1648.5" y="692.5508">void visit(IfNode &amp;p_if) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="214" x="1648.5" y="705.5059">void visit(WhileNode &amp;p_while) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="193" x="1648.5" y="718.4609">void visit(ForNode &amp;p_for) override;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="229" x="1648.5" y="731.416">void visit(ReturnNode &amp;p_return) override;</text><!--MD5=[adff4cad4f2ed7b29a79653814508c7c]
+reverse link AstNode to programNode--><path d="M1517.81,63.65 C1250.71,62.46 474.79,68.49 249,175 C232.63,182.72 217.15,193.42 202.97,205.4 " fill="none" id="AstNode-backto-programNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1518.03,56.66,1538,63.76,1517.96,70.66,1518.03,56.66" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a725d88cc03c7cbe32b51355bcd67b75]
+reverse link AstNode to DeclNode--><path d="M1517.72,65.45 C1285.16,69.14 676.12,87.16 497,175 C467.76,189.34 441.81,213.65 421.31,237.46 " fill="none" id="AstNode-backto-DeclNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1517.62,58.45,1537.73,65.15,1517.83,72.45,1517.62,58.45" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f6f779a9a4c627c50664422005a46a0b]
+reverse link AstNode to VariableNode--><path d="M1517.75,68.67 C1325.18,78.67 884.04,108.34 751,175 C732.59,184.22 715.34,197.21 699.85,211.45 " fill="none" id="AstNode-backto-VariableNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1517.46,61.67,1537.79,67.65,1518.17,75.65,1517.46,61.67" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[680ed4e64cc3d9c8c7aee25aefe3558c]
+reverse link AstNode to FunctionNode--><path d="M1517.51,65.6 C1397.17,70.52 1182.12,91.52 1021,175 C1005.34,183.11 990.28,193.63 976.27,205.18 " fill="none" id="AstNode-backto-FunctionNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1517.54,58.59,1537.77,64.88,1518.03,72.58,1517.54,58.59" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[136bc282f6291b5a68575712dc4b1892]
+reverse link AstNode to statementNode.CompoundStatementNode--><path d="M1584.76,139.57 C1575.37,168.63 1564.64,201.83 1555.26,230.9 " fill="none" id="AstNode-backto-statementNode.CompoundStatementNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1578.2,137.09,1591.01,120.21,1591.52,141.39,1578.2,137.09" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[adef0bf8514633a113358214942bfce7]
+reverse link AstNode to statementNode.AssignmentNode--><path d="M1667.24,135.9 C1693.35,167.9 1724.02,205.5 1749.87,237.2 " fill="none" id="AstNode-backto-statementNode.AssignmentNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1661.66,140.13,1654.44,120.21,1672.51,131.28,1661.66,140.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1cfed020a3a8937af31ecdba0d952817]
+reverse link AstNode to statementNode.PrintNode--><path d="M1699.97,81.84 C1768.18,97.97 1861.53,126.92 1932,175 C1956.38,191.63 1978.5,214.99 1996.47,237.39 " fill="none" id="AstNode-backto-statementNode.PrintNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1698.06,88.59,1680.1,77.34,1701.15,74.93,1698.06,88.59" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f4caedf7b40b4636bf9ff3821b849c74]
+reverse link AstNode to statementNode.ReadNode--><path d="M1700.37,66.6 C1813.45,72.75 2008.83,95.23 2154,175 C2182.07,190.42 2207.69,214.21 2228.39,237.3 " fill="none" id="AstNode-backto-statementNode.ReadNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1699.88,73.59,1680.24,65.63,1700.55,59.6,1699.88,73.59" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e3980069c620d7ad61a37c2cf61990d0]
+reverse link AstNode to statementNode.IfNode--><path d="M1700.09,70.6 C1881.58,83.8 2281.53,118.49 2406,175 C2432.55,187.05 2457.93,205.3 2480.05,224.38 " fill="none" id="AstNode-backto-statementNode.IfNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1699.56,77.58,1680.11,69.17,1700.56,63.61,1699.56,77.58" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[48dfd68038de38d47ade08f86a57d0cd]
+reverse link AstNode to statementNode.WhileNode--><path d="M1700.19,65.98 C1930.44,70.92 2529.65,91.66 2708,175 C2735.85,188.02 2761.4,209.27 2782.55,230.91 " fill="none" id="AstNode-backto-statementNode.WhileNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1699.9,72.97,1680.05,65.57,1700.19,58.98,1699.9,72.97" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4420d1dc3c2862e2cac1b7928da7a1cc]
+reverse link AstNode to statementNode.ForNode--><path d="M1700.5,63.95 C1968.53,63.58 2747.34,71.65 2976,175 C2998.64,185.23 3019.84,200.82 3038.49,217.72 " fill="none" id="AstNode-backto-statementNode.ForNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1700.26,70.95,1680.24,64,1700.23,56.95,1700.26,70.95" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5993e366f53ae8337967e1c1ee7a7709]
+reverse link AstNode to statementNode.ReturnNode--><path d="M1700.36,69.65 C1917.71,82.05 2482.64,115.12 2954,150 C3085.66,159.74 3130.7,118.46 3250,175 C3279.77,189.11 3306.31,213.37 3327.33,237.22 " fill="none" id="AstNode-backto-statementNode.ReturnNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1699.69,76.62,1680.12,68.5,1700.49,62.65,1699.69,76.62" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8e63f40f82bfaf76677983768c5edfd8]
+reverse link AstNode to statementNode.FunctionInvocationNode--><path d="M1700.19,69.42 C1935.06,82.14 2579.95,117.43 3117,150 C3289.04,160.43 3347.81,102.11 3504,175 C3531.06,187.63 3555.25,208.93 3574.98,230.72 " fill="none" id="AstNode-backto-statementNode.FunctionInvocationNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1699.65,76.4,1680.06,68.33,1700.41,62.42,1699.65,76.4" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[12b7c8936aec04ff4f58778e7a461619]
+reverse link AstNode to ExpressionNode--><path d="M1517.66,70.85 C1429.03,80.96 1294.32,107.15 1199,175 C1165.29,199 1140.45,240.06 1125.71,269.82 " fill="none" id="AstNode-backto-ExpressionNode" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1517.14,63.86,1537.76,68.74,1518.6,77.79,1517.14,63.86" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d2442b163b6d5ba125c5b379f0e6009f]
+reverse link ExpressionNode to FunctionInvocationNode--><path codeline="228" d="M1133.69,362.5 C1153.01,406.96 1180.61,470.46 1202.57,520.98 " fill="none" id="ExpressionNode-backto-FunctionInvocationNode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1127.25,365.24,1125.7,344.11,1140.09,359.66,1127.25,365.24" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[eaac523a05d9869306596d05961e2764]
+reverse link ExpressionNode to VariableReferenceNode--><path codeline="229" d="M1086.13,362.5 C1066.65,406.96 1038.84,470.46 1016.71,520.98 " fill="none" id="ExpressionNode-backto-VariableReferenceNode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1079.75,359.62,1094.18,344.11,1092.57,365.24,1079.75,359.62" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[457c8c80776682da3ce1c8246a838e24]
+reverse link ExpressionNode to UnaryOperatorNode--><path codeline="230" d="M1078.26,360.9 C1063.26,381.96 1043.65,404.76 1021,420 C956.06,463.68 918.01,427.45 852,469.5 C830.6,483.13 810.84,501.79 793.89,520.82 " fill="none" id="ExpressionNode-backto-UnaryOperatorNode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1072.53,356.88,1089.51,344.19,1084.15,364.69,1072.53,356.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d5aeb319800da01109c10461af6bf4f7]
+reverse link ExpressionNode to BinaryOperatorNode--><path codeline="231" d="M1080.57,361.05 C1065.64,382.92 1045.45,406.3 1021,420 C942.09,464.2 698.15,429.55 617,469.5 C591.99,481.81 569,500.86 549.5,520.73 " fill="none" id="ExpressionNode-backto-BinaryOperatorNode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1074.75,357.16,1091.4,344.06,1086.56,364.68,1074.75,357.16" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d7fdffbf77104bc8d5d010637a7c81c2]
+reverse link ExpressionNode to ConstantValueNode--><path codeline="232" d="M1141.75,360.88 C1156.75,381.94 1176.36,404.74 1199,420 C1263.55,463.5 1300.38,429.24 1367,469.5 C1397.42,487.88 1425.61,515.18 1447.84,540.26 " fill="none" id="ExpressionNode-backto-ConstantValueNode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1135.87,364.68,1130.5,344.18,1147.48,356.86,1135.87,364.68" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7f74722aed749e40011b54616832726a]
+reverse link AstNodeVisitor to AstDumper--><path d="M1317.74,354.5 C1333.93,377.66 1356.39,404.06 1383,420 C1477.17,476.42 1522.84,429.31 1625,469.5 C1630.78,471.77 1636.57,474.19 1642.37,476.74 " fill="none" id="AstNodeVisitor-backto-AstDumper" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1311.79,358.2,1306.63,337.65,1323.48,350.49,1311.79,358.2" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[eae108340932670dfed883c3f8752011]
+link AstNodeVisitor to AstNode--><path codeline="258" d="M1305.23,276.47 C1321.34,247.56 1349.09,203.8 1383,175 C1427.25,137.42 1486.49,109.07 1533.21,90.5 " fill="none" id="AstNodeVisitor-to-AstNode" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1537.98,88.62,1528.1403,88.1963,1533.3278,90.4522,1531.0719,95.6398,1537.98,88.62" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="1416" y="163.5684">visit()</text><!--MD5=[dc61f1b76ef0e7880af81a6ad2fc1c42]
+link AstNode to AstNodeVisitor--><path codeline="259" d="M1537.8,68.2 C1475.75,75.23 1387.54,95.02 1334,150 C1302.28,182.57 1293.07,236.16 1290.6,271.27 " fill="none" id="AstNode-to-AstNodeVisitor" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1290.28,276.31,1294.8383,267.5795,1290.5946,271.3199,1286.8541,267.0762,1290.28,276.31" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1335" y="163.5684">accept()</text><!--MD5=[6103d38172b1fa0461072e9722952044]
+@startuml
+
+
+interface AstNode {
+    #Location
+    #typeSet 
+    +getLocation()
+    +accept() override
+    +visitChild(& p_visitor)
+}
+
+class programNode implements AstNode{
+    -name: string
+    -returnType: void
+    - *declNode: class
+    - *funcNode: class
+    - *comStat: class
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): the program name line
+    +getName()
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class DeclNode implements AstNode {
+    -*VariableNode: class *variableNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword 'var'
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class VariableNode implements AstNode{
+    -name: string
+    -type: typeSet
+    -*constantValueNode: class
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): the variable name line
+    +getName()
+    +getType()
+    accept()
+    visitChild(& p_visitor)
+}
+
+
+
+class FunctionNode implements AstNode{
+    -name
+    -parameters: class *DeclNode
+    -returnType: typeSet
+    -body: class *CompoundStatementNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): the function name line
+    +getName()
+    +getReturnType()
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+namespace statementNode #DDDDDD {
+    class CompoundStatementNode implements .AstNode {
+    -*localVariable: class *declNode
+    -*statements:class *statementNode : AstNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword "begin" line
+    +accept()
+    +visitChild(& p_visitor)
+   }
+
+class AssignmentNode implements .AstNode{
+    -lvalue: class variableReferenceNode
+    -expression: class expressionNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class PrintNode implements .AstNode{
+    -target: class *expressionNode
+    +getLocation(): keyword "print"
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class ReadNode implements .AstNode{
+    -target: class variableReferenceNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword "read" line
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class IfNode implements .AstNode{
+    -condition: class *expressionNode
+    -body: class *compoundStatementNode
+    -bodyOfelse: class *compoundStatementNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword "if" line
+    +accept()
+    +visitChild(& p_visitor)
+}
+class WhileNode implements .AstNode{
+    -condition: class *expressionNode
+    -body: class *compoundStatementNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword "while"
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class ForNode implements .AstNode{
+    -loopVariableDecl: class *declNode
+    -initialStatement: class *assignmentNode
+    -condition: class *constantValueNode
+    -body: class *compoundStateNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword "for"
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class ReturnNode implements .AstNode{
+    -returnValue: class *expressionNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): keyword "return"
+    +accept()
+    +visitChild(& p_visitor)
+}
+class FunctionInvocationNode implements .AstNode{
+    -name: string
+    -Arguments: class *expressionNode
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getName()
+    +accept()
+    +visitChild(& p_visitor)
+}
+}
+
+
+class ExpressionNode implements AstNode{
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+    class BinaryOperatorNode {
+    -operator: string
+    -leftOperand: class *expressionNode
+    -rightOperand: class *expressionNode
+    - *next: class *ExpressionNode
+    +setNext(): set next class
+    +getLocation(): the operator line
+    +getOperator()
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class UnaryOperatorNode {
+    -operator: string
+    -operand: class *expressionNode
+    - *next: class *ExpressionNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): the operator line
+    +getOperator()
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class VariableReferenceNode {
+    -name: string
+    -indices: class *expressionNode
+    - *next: class *ExpressionNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation():  the variable name line
+    +getName()
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class FunctionInvocationNode {
+    -name: string
+    -Arguments: class *expressionNode
+    - *next: class *ExpressionNode
+    +setNext(): set next class
+    +getSelf(): return *thiss
+    +getLocation(): the function name line
+    +getName()
+    +accept()
+    +visitChild(& p_visitor)
+}
+
+class ConstantValueNode {
+    -value: inter, real, bool, string
+    - *next: class *AstNode
+    +setNext(): set next class
+    +getSelf(): return *this
+    +getLocation(): the constant value line
+    +getValue(type: typeSet)
+
+}
+ExpressionNode <|- - FunctionInvocationNode
+ExpressionNode <|- - VariableReferenceNode
+ExpressionNode <|- - UnaryOperatorNode
+ExpressionNode <|- - BinaryOperatorNode
+ExpressionNode <|- - ConstantValueNode
+
+interface AstNodeVisitor {
+    visit(& AstNode) override
+}
+
+class AstDumper implements AstNodeVisitor {
+    void visit(ProgramNode &p_program) override;
+    void visit(DeclNode &p_decl) override;
+    void visit(VariableNode &p_variable) override;
+    void visit(ConstantValueNode &p_constant_value) override;
+    void visit(FunctionNode &p_function) override;
+    void visit(CompoundStatementNode &p_compound_statement) override;
+    void visit(PrintNode &p_print) override;
+    void visit(BinaryOperatorNode &p_bin_op) override;
+    void visit(UnaryOperatorNode &p_un_op) override;
+    void visit(FunctionInvocationNode &p_func_invocation) override;
+    void visit(VariableReferenceNode &p_variable_ref) override;
+    void visit(AssignmentNode &p_assignment) override;
+    void visit(ReadNode &p_read) override;
+    void visit(IfNode &p_if) override;
+    void visit(WhileNode &p_while) override;
+    void visit(ForNode &p_for) override;
+    void visit(ReturnNode &p_return) override;
+}
+
+AstNodeVisitor - -> AstNode : visit()
+AstNode - -> AstNodeVisitor : accept()
+
+@enduml
+
+PlantUML version 1.2021.12(Wed Oct 06 00:01:58 CST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: CN
+--></g></svg></p>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
