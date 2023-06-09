@@ -9,4 +9,4 @@ Compiler design course lab
 - **LAB-2: Syntactic Definitions**
 - **LAB-3: Constructing Abstract Syntax Trees**
 - **LAB-4: Semantic Analyses**
-- **LAB-5: Semantic Analyses**
+- **LAB-5: Code Generation**
