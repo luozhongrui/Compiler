@@ -1,0 +1,6 @@
+./activate_docker.sh 
+lsl
+ls
+make
+git status
+exit

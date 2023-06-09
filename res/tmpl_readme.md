@@ -2,15 +2,15 @@
 
 |||
 |:-:|:-:|
-|Name|羅中睿|
-|ID|0856151|
-|GitHub|luozhongrui|
-|Email|736553939@qq.com|
+|Name|${name}|
+|ID|${id}|
+|GitHub|${github_handle}|
+|Email|${email}|
 > **請修改 `student_info.ini` 並執行程式更新資訊**
 
-+ Last Make: `2022-03-05 10:23:55 AM`
++ Last Make: `${last_maketime}`
 
-+ Docker ENV FLAG: `DOCKER_ACTIVATED`
++ Docker ENV FLAG: `${docker_env_tag}`
 
 ---
 
