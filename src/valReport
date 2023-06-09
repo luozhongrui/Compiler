@@ -1,0 +1,196 @@
+==1498== Memcheck, a memory error detector
+==1498== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1498== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==1498== Command: ./parser ../test/basic_cases/test_cases/15_AdvSema.p
+==1498== Parent PID: 1
+==1498== 
+==1498== 
+==1498== HEAP SUMMARY:
+==1498==     in use at exit: 15,852 bytes in 402 blocks
+==1498==   total heap usage: 1,319 allocs, 917 frees, 176,915 bytes allocated
+==1498== 
+==1498== 4 bytes in 2 blocks are definitely lost in loss record 1 of 15
+==1498==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x133796: split(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (SymbolEntry.cpp:19)
+==1498==    by 0x133C9E: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:57)
+==1498==    by 0x124201: SemanticAnalyzer::visit(FunctionNode&) (SemanticAnalyzer.cpp:160)
+==1498==    by 0x121C29: FunctionNode::accept(AstNodeVisitor&) (function.hpp:39)
+==1498==    by 0x122608: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12FunctionNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x122654: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x12250F: ProgramNode::visitChildNodes(AstNodeVisitor&) (program.cpp:11)
+==1498==    by 0x12360A: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:59)
+==1498==    by 0x122697: ProgramNode::accept(AstNodeVisitor&) (program.hpp:36)
+==1498==    by 0x10FC3B: main (parser.y:775)
+==1498== 
+==1498== 8 bytes in 1 blocks are definitely lost in loss record 2 of 15
+==1498==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x13375C: split(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (SymbolEntry.cpp:16)
+==1498==    by 0x133C9E: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:57)
+==1498==    by 0x124201: SemanticAnalyzer::visit(FunctionNode&) (SemanticAnalyzer.cpp:160)
+==1498==    by 0x121C29: FunctionNode::accept(AstNodeVisitor&) (function.hpp:39)
+==1498==    by 0x122608: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12FunctionNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x122654: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x12250F: ProgramNode::visitChildNodes(AstNodeVisitor&) (program.cpp:11)
+==1498==    by 0x12360A: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:59)
+==1498==    by 0x122697: ProgramNode::accept(AstNodeVisitor&) (program.hpp:36)
+==1498==    by 0x10FC3B: main (parser.y:775)
+==1498== 
+==1498== 64 bytes in 1 blocks are indirectly lost in loss record 3 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x12DDBD: __gnu_cxx::new_allocator<SymbolTable**>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==1498==    by 0x12D61C: std::allocator_traits<std::allocator<SymbolTable**> >::allocate(std::allocator<SymbolTable**>&, unsigned long) (alloc_traits.h:436)
+==1498==    by 0x12C997: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_M_allocate_map(unsigned long) (stl_deque.h:616)
+==1498==    by 0x12BC95: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_M_initialize_map(unsigned long) (stl_deque.h:689)
+==1498==    by 0x12B809: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_Deque_base() (stl_deque.h:492)
+==1498==    by 0x12A8A1: std::deque<SymbolTable*, std::allocator<SymbolTable*> >::deque() (stl_deque.h:888)
+==1498==    by 0x12957B: std::stack<SymbolTable*, std::deque<SymbolTable*, std::allocator<SymbolTable*> > >::stack<std::deque<SymbolTable*, std::allocator<SymbolTable*> >, void>() (stl_stack.h:149)
+==1498==    by 0x128B37: SymbolManager::SymbolManager() (SymbolManager.hpp:14)
+==1498==    by 0x1281EC: __static_initialization_and_destruction_0(int, int) (SemanticAnalyzer.cpp:4)
+==1498==    by 0x1282E2: _GLOBAL__sub_I_symbolManager (SemanticAnalyzer.cpp:661)
+==1498==    by 0x13918C: __libc_csu_init (in /home/student/src/parser)
+==1498== 
+==1498== 101 bytes in 1 blocks are possibly lost in loss record 4 of 15
+==1498==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x13375C: split(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (SymbolEntry.cpp:16)
+==1498==    by 0x133C9E: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:57)
+==1498==    by 0x124201: SemanticAnalyzer::visit(FunctionNode&) (SemanticAnalyzer.cpp:160)
+==1498==    by 0x121C29: FunctionNode::accept(AstNodeVisitor&) (function.hpp:39)
+==1498==    by 0x122608: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12FunctionNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x122654: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x12250F: ProgramNode::visitChildNodes(AstNodeVisitor&) (program.cpp:11)
+==1498==    by 0x12360A: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:59)
+==1498==    by 0x122697: ProgramNode::accept(AstNodeVisitor&) (program.hpp:36)
+==1498==    by 0x10FC3B: main (parser.y:775)
+==1498== 
+==1498== 101 bytes in 1 blocks are indirectly lost in loss record 5 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x11F0E8: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (basic_string.tcc:219)
+==1498==    by 0x1339C5: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:37)
+==1498==    by 0x124201: SemanticAnalyzer::visit(FunctionNode&) (SemanticAnalyzer.cpp:160)
+==1498==    by 0x121C29: FunctionNode::accept(AstNodeVisitor&) (function.hpp:39)
+==1498==    by 0x122608: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12FunctionNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x122654: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x12250F: ProgramNode::visitChildNodes(AstNodeVisitor&) (program.cpp:11)
+==1498==    by 0x12360A: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:59)
+==1498==    by 0x122697: ProgramNode::accept(AstNodeVisitor&) (program.hpp:36)
+==1498==    by 0x10FC3B: main (parser.y:775)
+==1498== 
+==1498== 104 bytes in 7 blocks are indirectly lost in loss record 6 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x116FCF: __gnu_cxx::new_allocator<unsigned long>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==1498==    by 0x115D6E: std::allocator_traits<std::allocator<unsigned long> >::allocate(std::allocator<unsigned long>&, unsigned long) (alloc_traits.h:436)
+==1498==    by 0x114035: std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_allocate(unsigned long) (stl_vector.h:172)
+==1498==    by 0x1135C5: void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long&&) (vector.tcc:406)
+==1498==    by 0x111901: void std::vector<unsigned long, std::allocator<unsigned long> >::emplace_back<unsigned long>(unsigned long&&) (vector.tcc:105)
+==1498==    by 0x134AA1: std::vector<unsigned long, std::allocator<unsigned long> >::push_back(unsigned long&&) (stl_vector.h:954)
+==1498==    by 0x133BD6: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:48)
+==1498==    by 0x123BB8: SemanticAnalyzer::visit(VariableNode&) (SemanticAnalyzer.cpp:109)
+==1498==    by 0x120035: VariableNode::accept(AstNodeVisitor&) (variable.hpp:32)
+==1498==    by 0x11FE98: _ZZN8DeclNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12VariableNodeSt14default_deleteIS7_EEEEDaS3_ (decl.cpp:22)
+==1498==    by 0x11FEE4: DeclNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >*, std::vector<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >, std::allocator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> > > > >, DeclNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >*, std::vector<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >, std::allocator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >*, std::vector<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >, std::allocator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> > > > >, DeclNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498== 
+==1498== 288 bytes in 2 blocks are indirectly lost in loss record 7 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x12E04F: __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*) (new_allocator.h:111)
+==1498==    by 0x12DA99: std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::allocate(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, unsigned long) (alloc_traits.h:436)
+==1498==    by 0x12D1F1: std::_Vector_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_allocate(unsigned long) (stl_vector.h:172)
+==1498==    by 0x132D31: void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (vector.tcc:406)
+==1498==    by 0x132BBF: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (stl_vector.h:948)
+==1498==    by 0x133828: split(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (SymbolEntry.cpp:26)
+==1498==    by 0x133C9E: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:57)
+==1498==    by 0x124201: SemanticAnalyzer::visit(FunctionNode&) (SemanticAnalyzer.cpp:160)
+==1498==    by 0x121C29: FunctionNode::accept(AstNodeVisitor&) (function.hpp:39)
+==1498==    by 0x122608: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12FunctionNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x122654: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498== 
+==1498== 480 (280 direct, 200 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x1234F9: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:57)
+==1498==    by 0x122697: ProgramNode::accept(AstNodeVisitor&) (program.hpp:36)
+==1498==    by 0x10FC3B: main (parser.y:775)
+==1498== 
+==1498== 512 bytes in 1 blocks are indirectly lost in loss record 9 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x12DD15: __gnu_cxx::new_allocator<SymbolTable*>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==1498==    by 0x12D582: std::allocator_traits<std::allocator<SymbolTable*> >::allocate(std::allocator<SymbolTable*>&, unsigned long) (alloc_traits.h:436)
+==1498==    by 0x12D647: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_M_allocate_node() (stl_deque.h:602)
+==1498==    by 0x12CA14: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_M_create_nodes(SymbolTable***, SymbolTable***) (stl_deque.h:727)
+==1498==    by 0x12BCEE: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_M_initialize_map(unsigned long) (stl_deque.h:701)
+==1498==    by 0x12B809: std::_Deque_base<SymbolTable*, std::allocator<SymbolTable*> >::_Deque_base() (stl_deque.h:492)
+==1498==    by 0x12A8A1: std::deque<SymbolTable*, std::allocator<SymbolTable*> >::deque() (stl_deque.h:888)
+==1498==    by 0x12957B: std::stack<SymbolTable*, std::deque<SymbolTable*, std::allocator<SymbolTable*> > >::stack<std::deque<SymbolTable*, std::allocator<SymbolTable*> >, void>() (stl_stack.h:149)
+==1498==    by 0x128B37: SymbolManager::SymbolManager() (SymbolManager.hpp:14)
+==1498==    by 0x1281EC: __static_initialization_and_destruction_0(int, int) (SemanticAnalyzer.cpp:4)
+==1498==    by 0x1282E2: _GLOBAL__sub_I_symbolManager (SemanticAnalyzer.cpp:661)
+==1498== 
+==1498== 680 (104 direct, 576 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x1281E1: __static_initialization_and_destruction_0(int, int) (SemanticAnalyzer.cpp:4)
+==1498==    by 0x1282E2: _GLOBAL__sub_I_symbolManager (SemanticAnalyzer.cpp:661)
+==1498==    by 0x13918C: __libc_csu_init (in /home/student/src/parser)
+==1498==    by 0x5602C17: (below main) (libc-start.c:266)
+==1498== 
+==1498== 1,073 bytes in 54 blocks are still reachable in loss record 11 of 15
+==1498==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x567E9D9: strdup (strdup.c:42)
+==1498==    by 0x11D652: concatenateString(char const*) (scanner.l:226)
+==1498==    by 0x11BBE6: yylex (scanner.l:177)
+==1498==    by 0x10CDDC: yyparse() (parser.cpp:1542)
+==1498==    by 0x10FB91: main (parser.y:767)
+==1498== 
+==1498== 2,749 (1,400 direct, 1,349 indirect) bytes in 5 blocks are definitely lost in loss record 12 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x1241E3: SemanticAnalyzer::visit(FunctionNode&) (SemanticAnalyzer.cpp:160)
+==1498==    by 0x121C29: FunctionNode::accept(AstNodeVisitor&) (function.hpp:39)
+==1498==    by 0x122608: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12FunctionNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x122654: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >*, std::vector<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> >, std::allocator<std::unique_ptr<FunctionNode, std::default_delete<FunctionNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x12250F: ProgramNode::visitChildNodes(AstNodeVisitor&) (program.cpp:11)
+==1498==    by 0x12360A: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:59)
+==1498==    by 0x122697: ProgramNode::accept(AstNodeVisitor&) (program.hpp:36)
+==1498==    by 0x10FC3B: main (parser.y:775)
+==1498== 
+==1498== 3,560 bytes in 89 blocks are indirectly lost in loss record 13 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x12E6F1: __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<char const, int> > >::allocate(unsigned long, void const*) (new_allocator.h:111)
+==1498==    by 0x12E447: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<char const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<char const, int> > >&, unsigned long) (alloc_traits.h:436)
+==1498==    by 0x12E0B2: std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_M_get_node() (stl_tree.h:588)
+==1498==    by 0x12DC4F: std::_Rb_tree_node<std::pair<char const, int> >* std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_M_create_node<std::pair<char const, int> const&>(std::pair<char const, int> const&) (stl_tree.h:642)
+==1498==    by 0x12D40A: std::_Rb_tree_node<std::pair<char const, int> >* std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_Alloc_node::operator()<std::pair<char const, int> const&>(std::pair<char const, int> const&) const (stl_tree.h:556)
+==1498==    by 0x1359E9: std::_Rb_tree_iterator<std::pair<char const, int> > std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_M_insert_<std::pair<char const, int> const&, std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_Alloc_node>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<char const, int> const&, std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_Alloc_node&) (stl_tree.h:1753)
+==1498==    by 0x135149: std::_Rb_tree_iterator<std::pair<char const, int> > std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_M_insert_unique_<std::pair<char const, int> const&, std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_Alloc_node>(std::_Rb_tree_const_iterator<std::pair<char const, int> >, std::pair<char const, int> const&, std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_Alloc_node&) (stl_tree.h:2206)
+==1498==    by 0x134CAA: void std::_Rb_tree<char, std::pair<char const, int>, std::_Select1st<std::pair<char const, int> >, std::less<char>, std::allocator<std::pair<char const, int> > >::_M_insert_unique<std::pair<char const, int> const*>(std::pair<char const, int> const*, std::pair<char const, int> const*) (stl_tree.h:2452)
+==1498==    by 0x13482B: std::map<char, int, std::less<char>, std::allocator<std::pair<char const, int> > >::map(std::initializer_list<std::pair<char const, int> >, std::less<char> const&, std::allocator<std::pair<char const, int> > const&) (stl_map.h:224)
+==1498==    by 0x13393F: SymbolEntry::SymbolEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >) (SymbolEntry.cpp:37)
+==1498==    by 0x123517: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:57)
+==1498== 
+==1498== 4,053 bytes in 221 blocks are definitely lost in loss record 14 of 15
+==1498==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x567E9D9: strdup (strdup.c:42)
+==1498==    by 0x11D652: concatenateString(char const*) (scanner.l:226)
+==1498==    by 0x11B7E2: yylex (scanner.l:114)
+==1498==    by 0x10CDDC: yyparse() (parser.cpp:1542)
+==1498==    by 0x10FB91: main (parser.y:767)
+==1498== 
+==1498== 6,704 (4,200 direct, 2,504 indirect) bytes in 15 blocks are definitely lost in loss record 15 of 15
+==1498==    at 0x4C3217F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1498==    by 0x123B9A: SemanticAnalyzer::visit(VariableNode&) (SemanticAnalyzer.cpp:109)
+==1498==    by 0x120035: VariableNode::accept(AstNodeVisitor&) (variable.hpp:32)
+==1498==    by 0x11FE98: _ZZN8DeclNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI12VariableNodeSt14default_deleteIS7_EEEEDaS3_ (decl.cpp:22)
+==1498==    by 0x11FEE4: DeclNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >*, std::vector<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >, std::allocator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> > > > >, DeclNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >*, std::vector<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >, std::allocator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >*, std::vector<std::unique_ptr<VariableNode, std::default_delete<VariableNode> >, std::allocator<std::unique_ptr<VariableNode, std::default_delete<VariableNode> > > > >, DeclNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x11FDD9: DeclNode::visitChildNodes(AstNodeVisitor&) (decl.cpp:23)
+==1498==    by 0x1238C6: SemanticAnalyzer::visit(DeclNode&) (SemanticAnalyzer.cpp:74)
+==1498==    by 0x11E583: DeclNode::accept(AstNodeVisitor&) (decl.hpp:44)
+==1498==    by 0x122576: _ZZN11ProgramNode15visitChildNodesER14AstNodeVisitorENKUlRT_E_clISt10unique_ptrI8DeclNodeSt14default_deleteIS7_EEEEDaS3_ (program.cpp:8)
+==1498==    by 0x1225C2: ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1} std::for_each<__gnu_cxx::__normal_iterator<std::unique_ptr<DeclNode, std::default_delete<DeclNode> >*, std::vector<std::unique_ptr<DeclNode, std::default_delete<DeclNode> >, std::allocator<std::unique_ptr<DeclNode, std::default_delete<DeclNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}>(__gnu_cxx::__normal_iterator<std::unique_ptr<DeclNode, std::default_delete<DeclNode> >*, std::vector<std::unique_ptr<DeclNode, std::default_delete<DeclNode> >, std::allocator<std::unique_ptr<DeclNode, std::default_delete<DeclNode> > > > >, __gnu_cxx::__normal_iterator<std::unique_ptr<DeclNode, std::default_delete<DeclNode> >*, std::vector<std::unique_ptr<DeclNode, std::default_delete<DeclNode> >, std::allocator<std::unique_ptr<DeclNode, std::default_delete<DeclNode> > > > >, ProgramNode::visitChildNodes(AstNodeVisitor&)::{lambda(auto:1&)#1}) (stl_algo.h:3884)
+==1498==    by 0x1224D3: ProgramNode::visitChildNodes(AstNodeVisitor&) (program.cpp:10)
+==1498==    by 0x12360A: SemanticAnalyzer::visit(ProgramNode&) (SemanticAnalyzer.cpp:59)
+==1498== 
+==1498== LEAK SUMMARY:
+==1498==    definitely lost: 10,049 bytes in 246 blocks
+==1498==    indirectly lost: 4,629 bytes in 101 blocks
+==1498==      possibly lost: 101 bytes in 1 blocks
+==1498==    still reachable: 1,073 bytes in 54 blocks
+==1498==         suppressed: 0 bytes in 0 blocks
+==1498== 
+==1498== For counts of detected and suppressed errors, rerun with: -v
+==1498== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 0 from 0)

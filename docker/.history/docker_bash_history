@@ -1,0 +1,810 @@
+make
+make
+clear
+cd src/
+./parser ../test/basic_cases/test_cases/1_table.p 
+make clean
+clear
+make
+make
+make clean
+clear
+exit
+make
+make
+make
+make
+lcear
+clear
+make
+make clear
+make clean
+clear
+exit
+make
+cd src/
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+./parser ../test/basic_cases/test_cases/1_table.p --dump-ast
+make
+clear
+./parser ../test/basic_cases/test_cases/1_table.p --dump-ast
+./parser ../test/basic_cases/test_cases/1_table.p 
+clear
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+clear
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+make
+./parser ../test/basic_cases/test_cases/1_table.p 
+./parser ../test/basic_cases/test_cases/1_table.p >> test
+make
+./parser ../test/basic_cases/test_cases/1_table.p > test
+make
+./parser ../test/basic_cases/test_cases/1_table.p > test
+clear
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+clear
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+make
+clear
+make
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+clear
+make
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p 
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+make
+./parser ../test/basic_cases/test_cases/2_redecl.p > test
+./parser ../test/basic_cases/test_cases/1_table.p > test
+./parser ../test/basic_cases/test_cases/3_variable.p > test
+./parser ../test/basic_cases/test_cases/4_VariableReference.p > test
+./parser ../test/basic_cases/test_cases/5_BinaryOperator.p > test
+./parser ../test/basic_cases/test_cases/6_UnaryOperator.p > test
+./parser ../test/basic_cases/test_cases/7_FunctionInvocation.p > test
+./parser ../test/basic_cases/test_cases/8_PrintStatement.p > test
+./parser ../test/basic_cases/test_cases/9_ReadStatement.p > test
+./parser ../test/basic_cases/test_cases/10_assignment.p > test
+./parser ../test/basic_cases/test_cases/11_condition.p > test
+make
+./parser ../test/basic_cases/test_cases/11_condition.p > test
+make
+./parser ../test/basic_cases/test_cases/11_condition.p > test
+./parser ../test/basic_cases/test_cases/12_ForLoop.p > test
+./parser ../test/basic_cases/test_cases/13_ret.p > test
+./parser ../test/basic_cases/test_cases/14_AdvSymbol.p > test
+./parser ../test/basic_cases/test_cases/15_AdvSema.p > test
+exit
+make
+clear
+./src/parser ./test/basic_cases/test_cases/1_table.p 
+exit
+make
+make
+make
+make
+./src/parser ./test/basic_cases/test_cases/1_table.p 
+make
+./src/parser ./test/basic_cases/test_cases/1_table.p 
+./src/parser ./test/basic_cases/test_cases/2_redecl.p 
+gdb src/parser
+./src/parser ./test/basic_cases/test_cases/1_table.p 
+make
+./src/parser ./test/basic_cases/test_cases/1_table.p 
+make
+./src/parser ./test/basic_cases/test_cases/1_table.p 
+./src/parser ./test/basic_cases/test_cases/2_redecl.p 
+exit
+ls
+make clean
+make
+gdb src/parser
+clear
+make
+src/parser ./test/basic_cases/test_cases/1_table.p 
+src/parser ./test/basic_cases/test_cases/1_table.p >src/test 
+src/parser ./test/basic_cases/test_cases/2_redecl.p >src/test 
+make
+src/parser ./test/basic_cases/test_cases/2_redecl.p >src/test 
+make clean
+exit
+make
+src/parser test/basic_cases/test_cases/2_redecl.p 
+make test
+clear
+src/parser test/basic_cases/test_cases/2_redecl.p 
+exit
+make
+make
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+src/parser test/basic_cases/test_cases/2_redecl.p 
+src/parser test/basic_cases/test_cases/3_variable.p 
+make
+src/parser test/basic_cases/test_cases/3_variable.p 
+make
+src/parser test/basic_cases/test_cases/3_variable.p 
+src/parser test/basic_cases/test_cases/4_VariableReference.p 
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+make
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+src/parser test/basic_cases/test_cases/4_VariableReference.p --dump-ast
+exit
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+src/parser test/basic_cases/test_cases/2_redecl.p 
+src/parser test/basic_cases/test_cases/3_variable.p 
+src/parser test/basic_cases/test_cases/4_VariableReference.p 
+make test
+make clean
+make
+src/parser test/basic_cases/test_cases/3_variable.p 
+src/parser test/basic_cases/test_cases/3_variable.p > src/test
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test
+src/parser test/basic_cases/test_cases/4_VariableReference.p --dump-ast
+make
+clear
+make
+make clean
+clear
+make
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+make
+src/parser test/basic_cases/test_cases/1_table.p 
+src/parser test/basic_cases/test_cases/2_redecl.p 
+src/parser test/basic_cases/test_cases/3_variable.p 
+src/parser test/basic_cases/test_cases/4_VariableReference.p 
+make test
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test 
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test 
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test 
+make
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test 
+make test
+make
+clear
+make clean
+clear
+make
+make test
+make clean
+clear
+git status
+exit
+make
+gdb src/parser
+exit
+make clean
+make
+make
+make test
+src/parser test/basic_cases/test_cases/4_VariableReference.p 
+src/parser test/basic_cases/test_cases/4_VariableReference.p > src/test.txt 
+make
+make clean
+make
+make
+make test
+make clean
+make
+make
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p --dump-ast >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p --dump-ast >src/test.txt 
+src/parser src/testB.p --dump-ast >src/test.txt 
+make clean
+clear
+exit
+gdb src/parser.
+clear
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p  >src/test.txt 
+gdb src/parser
+make clean
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+make test
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make clean
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test
+make clean
+clear
+make
+gdb src/parser
+ls
+vim test/basic_cases/test_cases/5_BinaryOperator.p 
+apt-get install vim
+apt update
+apt-get install vim
+vim test/basic_cases/test_cases/5_BinaryOperator.p
+ls
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+qmake
+make
+qmake
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+make
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+hmake
+make
+make
+make
+make
+make
+make
+make
+./src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+make
+make
+make
+make
+make
+make
+make
+make
+clear
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+src/parser test/basic_cases/test_cases/1_table.p 
+src/parser test/basic_cases/test_cases/2_redecl.p 
+src/parser test/basic_cases/test_cases/3_variable.p 
+gdb src/parser
+make
+make
+make
+make
+make
+make
+make
+make
+make
+src/parser test/basic_cases/test_cases/3_variable.p 
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p 
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+diff src/test test/basic_cases/sample_solutions/5_BinaryOperator 
+pwd
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+make test
+make
+make
+clear
+make
+make
+make
+make
+make
+make test
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test 
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p > src/test.txt
+make
+make test
+make
+make test
+make
+make
+make
+make
+clear
+make
+make test
+clear
+exit
+clear
+make
+src/parser test/basic_cases/test_cases/6_UnaryOperator.p >src/test.txt 
+make
+make test
+src/parser test/basic_cases/test_cases/6_UnaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/6_UnaryOperator.p >src/test.txt 
+make
+make tset
+make test
+src/parser test/basic_cases/test_cases/6_UnaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/6_UnaryOperator.p >src/test.txt 
+make test
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p 
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/7_FunctionInvocation.p >src/test.txt 
+make
+make test
+make
+make
+make test
+make
+make test
+make
+src/parser test/basic_cases/test_cases/10_assignment.p 
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+make
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+src/parser test/basic_cases/test_cases/12_ForLoop.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/12_ForLoop.p >src/test.txt 
+make
+makemake
+make
+make
+src/parser test/basic_cases/test_cases/12_ForLoop.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/12_ForLoop.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/12_ForLoop.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/12_ForLoop.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+make
+make
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/11_condition.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+make
+make
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make test
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+make
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make test
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+src/parser test/basic_cases/test_cases/14_AdvSymbol.p >src/test.txt 
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+ls
+exit
+make
+make test
+src/parser test/basic_cases/test_cases/1_table.p >src/test.txt
+make
+make
+make test
+src/parser test/basic_cases/test_cases/1_table.p >src/test.txt
+make
+src/parser test/basic_cases/test_cases/1_table.p >src/test.txt
+make
+src/parser test/basic_cases/test_cases/1_table.p >src/test.txt
+make test
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt
+clear
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+make
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+make test
+make
+make test
+make
+make test
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/10_assignment.p >src/test.txt 
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/13_ret.p >src/test.txt 
+make
+make test
+src/parser test/basic_cases/test_cases/1_table.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/1_table.p >src/test.txt 
+make test
+src/parser test/basic_cases/test_cases/14_AdvSymbol.p >src/test.txt 
+make
+make
+src/parser test/basic_cases/test_cases/14_AdvSymbol.p >src/test.txt 
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+q
+exit
+make
+make test
+exit
+ls
+make
+./src/parser test/basic_cases/test_cases/15_AdvSema.p 
+make
+./src/parser test/basic_cases/test_cases/15_AdvSema.p 
+make
+./src/parser test/basic_cases/test_cases/15_AdvSema.p 
+make
+./src/parser test/basic_cases/test_cases/15_AdvSema.p 
+make
+./src/parser test/basic_cases/test_cases/15_AdvSema.p 
+exit
+make
+clear
+src/parser test/basic_cases/test_cases/15_AdvSema.p 
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+make test
+make
+make test
+src/parser test/basic_cases/test_cases/15_AdvSema.p 
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+make test
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+src/parser test/basic_cases/test_cases/6_UnaryOperator.p >src/test.txt 
+make test
+make 
+make test
+src/parser test/basic_cases/test_cases/15_AdvSema.p >src/test.txt 
+make
+make test
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make
+src/parser test/basic_cases/test_cases/5_BinaryOperator.p >src/test.txt 
+make test
+make clean
+clear
+make
+make test
+exit
+apt update
+sudo apt update
+apt-get update
+sudo apt-get update
+apt-get install
+sudo apt-get install
+exit
+apt-get update
+apt-get install valgrind
+ls
+cd src/
+ls
+make
+valgrind --log-file=valReport --leak-check=full --show-reachable=yes --leak-resolution=low ./parser ../test/basic_cases/test_cases/15_AdvSema.p 
+ls
+ll
+cat valReport 
+exit
+make test
+make
+apt update
+ls
+cd src/
+ls
+cd lib/
+ls
+cd AST/
+ls
+vim 
+exit
+make
+exit
