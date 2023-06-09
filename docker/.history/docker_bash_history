@@ -1,0 +1,1007 @@
+ls
+pwd
+who
+whomai
+ls
+cd src/
+ls
+top scanner.
+top scanner.c 
+top 10 scanner.c 
+cat scanner.c 
+less scanner.c 
+head 10 scanner.c
+clear
+head 10 scanner.c 
+exit
+ls
+cd src/
+ls
+flex scanner.l 
+ls
+gcc lex.yy.c -ll
+ls
+./a.out <"("
+vim test
+ls
+./a.out < test 
+./a.out test 
+./a.out test 
+flex scanner.l 
+gcc lex.yy.c -ll
+./a.out test.p 
+./a.out test.p 
+flex scanner.l 
+gcc lex.yy.c -ll
+./a.out test.p 
+./build.sh 
+./build.sh 
+ls
+ls -al
+chmod +x build.sh 
+ls -al
+./build.sh 
+./a.out test.p 
+./build.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+clear
+clear
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+clear
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+./run.sh 
+diff
+./run.sh 
+./run.sh ../test/
+./run.sh ../test/
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+./a.out ../test/basic_cases/test_cases/1_keywords1.p 
+clear
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+ls ../test/basic_cases/test_cases/1_keywords1.p
+ls ../test/basic_cases/test_cases/1_keywords1.p
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+./run.sh ../test/basic_cases/test_cases/1_keywords1.p ../test/basic_cases/sample_solutions/1_keywords1 
+ls
+diff testResult.txt ../test/basic_cases/sample_solutions/1_keywords1 
+diff testResult.txt ../test/basic_cases/sample_solutions/1_keywords1 
+clear
+./run.sh ../test/basic_cases/test_cases/2_keywords2.p ../test/basic_cases/sample_solutions/2_keywords2 
+./run.sh ../test/basic_cases/test_cases/4_arithmetic.p ../test/basic_cases/sample_solutions/4_arithmetic 
+./run.sh ../test/basic_cases/test_cases/5_logical.p ../test/basic_cases/sample_solutions/5_logical 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+./run.sh ../test/basic_cases/test_cases/7_identifier.p ../test/basic_cases/sample_solutions/7_identifier 
+clear
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/8_constant.p ../test/basic_cases/sample_solutions/8_constant 
+./a.out test.p 
+exit
+clear
+ls
+cd src/
+clear
+cd src/
+ls
+./run.sh ../test/basic_cases/test_cases/6_relational.p ../test/basic_cases/sample_solutions/6_relational 
+./run.sh ../test/basic_cases/test_cases/6_relational.p ../test/basic_cases/sample_solutions/6_relational 
+./run.sh ../test/basic_cases/test_cases/6_relational.p ../test/basic_cases/sample_solutions/6_relational 
+./run.sh ../test/basic_cases/test_cases/6_relational.p ../test/basic_cases/sample_solutions/6_relational 
+./run.sh ../test/basic_cases/test_cases/6_relational.p ../test/basic_cases/sample_solutions/6_relational 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./a.out test.p 
+./a.out test.p 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./a.out  test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./a.out test.p 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/10_comment.p ../test/basic_cases/sample_solutions/10_comment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+clear
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomme
+clear
+cd ../
+ls
+clear
+ls
+make test/
+make test
+make clean
+cd src/
+clear
+ls
+make test
+make
+make test
+cd ../
+make test
+clear
+cd src/
+cd ../
+make clean
+clear
+cd src/
+make clean
+ls
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./a.out test.p 
+./a.out test.p 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./a.out test.p 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/11_pseudocomment.p ../test/basic_cases/sample_solutions/11_pseudocomment 
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+ls
+make clean
+make
+../
+ls
+make clean
+make 
+cd ../
+make clean
+make test
+cd src/
+make
+cd ../
+make test/
+make test
+clear
+make test
+cd src/
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+clear
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+./run.sh ../test/advance_cases/test_cases/9_float.p ../test/advance_cases/sample_solutions/9_float 
+clear
+make clean
+cd ../
+ls
+make
+make test
+make
+make test
+make clean
+make 
+make test
+clar
+clear
+cd src/
+./run.sh ../test/advance_cases/test_cases/1_pseudo_optS_1.p ../test/advance_cases/sample_solutions/1_pseudo_optS_1 
+./run.sh ../test/advance_cases/test_cases/1_pseudo_optS_1.p ../test/advance_cases/sample_solutions/1_pseudo_optS_1 
+./run.sh ../test/advance_cases/test_cases/10_scientific.p ../test/advance_cases/sample_solutions/10_scientific 
+cd ../
+make clean
+make 
+make
+make
+make
+make
+make test
+make test
+make clean
+make 
+make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean
+make 
+make test
+exit
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+make clean && make && make test
+cd src/
+ls
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+cd ../
+make clean 
+make 
+make test
+make clean &&  make &&  make test
+make clean &&  make &&  make test
+cd src/
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+./scanner test.p 
+make
+make
+cd ../
+make clean && make && make test
+make clean && make && make test
+cd src/
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+cd ../
+make clean
+make 
+make test
+exit
+clear
+make clean && make && make test
+cd src/
+ls
+make
+make
+make
+./scanner test.p 
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+cd ../
+make clean
+make 
+make test
+make clean
+make
+make clean
+make
+make test
+cd src/
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+cd ../
+make make test
+make && make test
+make 
+make test
+cd src/
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make test
+make
+make test
+make
+make test
+clear
+cd src/
+ls
+make
+./scanner test.p 
+cd src/
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+cd ../
+make clean
+make
+make test
+make
+make
+cd src/
+./scanner test.p 
+cd src/
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+make
+make
+./scanner test.p 
+cd ../
+make
+make test
+make
+make test
+cd src/
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+cd ../
+make
+make test
+make 
+make test
+cd src/
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+make
+make
+make
+make
+make
+make
+./scanner test.p 
+make
+make
+make
+./scanner test.p 
+make
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+cd ../
+make clean
+make
+make test
+make
+make test
+make
+make test
+make
+make
+make
+make test
+make
+make
+make test
+make
+make test
+make
+make test
+make
+make
+make test
+cd src/
+make
+make
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+make
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+cd src/
+make
+./scanner test.p 
+cd src/
+ls
+make 
+make 
+./scanner test.p 
+make 
+./scanner test.p 
+cd ../
+make clean
+make 
+make test
+make 
+make test
+make 
+make test
+make clean
+make 
+make test
+make clean
+make 
+make test
+cd src/
+make
+./scanner test.p 
+make
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+./scanner test.p 
+./run.sh ../test/advance_cases/test_cases/11_string_1.p ../test/advance_cases/sample_solutions/11_string_1 
+cd ../
+cd src/
+./run.sh ../test/basic_cases/test_cases/9_scientific_string.p ../test/basic_cases/sample_solutions/9_scientific_string 
+cd ../
+make clean
+make 
+make test
+make 
+make test
+make 
+make test
+make 
+make test
+cd src/
+./scanner test
+./scanner test.p 
+./scanner test.p 
+./scanner test.p 
+./scanner test.p > testResult 
+./scanner test.p > testResult 
+make
+./scanner test.p > testResult 
+./scanner test.p > testResult 
+make
+make
+clear
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+makw
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p 
+make
+./scanner test.p testResult 
+./scanner test.p> testResult 
+cd ../
+make clean
+make 
+make test
+git status
+exit
+make clean
+make
+make test
+exit
